@@ -9,30 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Poppins:ital,wght@0,400;0,600;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/common.css">
 
     <style>
-        *{
-            font-family: 'Poppins', sans-serif;
-        }
-        .h-font{            
-            font-family: 'Merienda', cursive;
-        }
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-        }
-
-        /* Firefox */
-        input[type=number] {
-            -moz-appearance: textfield;
-        }
-        .custom-bg{
-            background-color: #2ec1ac;
-        }
-        .custom-bg:hover{
-            background-color: #279e8c;
-        }
         .availability-form{
             margin-top: -50px;
             z-index: 2;
@@ -436,6 +415,35 @@
 
             <div class="col-lg-12 text-center mt-5">
                 <a href="#" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">More Rooms >>></a>
+            </div>
+        </div>
+    </div>
+
+    <h2 class ="mt-5 pt-4 mb-4 text-center fw-bold h-font">OUR FACILITIES</h2>
+    <div class="container">
+        <div class="row justify-content-evenly px-lg-0 px-md-0 px-5">
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+            <img src="images/facilities/wifi.svg" width="80px">
+            <h5 class="mt-3">Wifi</h5>
+            </div>
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+                <img src="images/facilities/arrow-through-heart-fill.svg" width="80px">
+                <h5 class="mt-3">arrow-through-heart-fill</h5>
+            </div>
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+                <img src="images/facilities/maylanh.svg" width="80px">
+                <h5 class="mt-3">maylanh</h5>
+            </div>
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+                <img src="images/facilities/nuong.svg" width="80px">
+                <h5 class="mt-3">nuong</h5>
+            </div>
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+                <img src="images/facilities/tv.svg" width="80px">
+                <h5 class="mt-3">tv</h5>
+            </div>
+            <div class="col-lg-12 text-center mt-5">
+                <a href="#" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">More Facilities >>></a>
             </div>
         </div>
     </div>
