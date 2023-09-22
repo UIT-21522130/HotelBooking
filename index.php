@@ -182,7 +182,7 @@
     </div>
     <!-- Carousal -->
     <div class="container-fluid px-lg-4 mt-4">
-        <div class="swiper mySwiper">
+        <div class="swiper swiper-container">
             <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <img src="images/carousel/1.png" class="w-100 d-block"/>
@@ -255,7 +255,7 @@
     </div>
 
     <!-- Our rooms -->
-    <h2 class ="mt-5 pt-4 mb-4 text-center fw-bold h-font">OUR ROOMS</h2>
+    <h2 id="rooms" class ="mt-5 pt-4 mb-4 text-center fw-bold h-font">OUR ROOMS</h2>
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-6 my-3">
@@ -418,8 +418,8 @@
             </div>
         </div>
     </div>
-
-    <h2 class ="mt-5 pt-4 mb-4 text-center fw-bold h-font">OUR FACILITIES</h2>
+    <!-- Our facilities -->
+    <h2 id="ourfacilities" class ="mt-5 pt-4 mb-4 text-center fw-bold h-font">OUR FACILITIES</h2>
     <div class="container">
         <div class="row justify-content-evenly px-lg-0 px-md-0 px-5">
             <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
@@ -447,14 +447,162 @@
             </div>
         </div>
     </div>
+    <!-- Testimonials -->
+    <h2 class ="mt-5 pt-4 mb-4 text-center fw-bold h-font">TESTIMONIALS</h2>
+    <div class="container mt-5">
+        <div class="swiper swiper-testimonials">
+            <div class="swiper-wrapper mb-5">
+              <div class="swiper-slide bg-white p-4">
+                <div class="profile d-flex align-items-center p-4">
+                    <img src="images/facilities/star-fill.svg" width="30px">
+                    <h6 class="m-0 ms-2">Random user1</h6>
+                </div>
+                <p>
+                    Remember to adapt the code to your specific needs and the structure of the Cafe Vietstock website. Additionally, be mindful of any terms of service and legal considerations when scraping data from websites.
+                </p>
+                <div class="rating">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
 
-    <br><br><br>
-    <br><br><br>
+                </div>
+              </div>
+              <div class="swiper-slide bg-white p-4">
+                <div class="profile d-flex align-items-center p-4">
+                    <img src="images/facilities/star-fill.svg" width="30px">
+                    <h6 class="m-0 ms-2">Random user2</h6>
+                </div>
+                <p>
+                    Remember to adapt the code to your specific needs and the structure of the Cafe Vietstock website. Additionally, be mindful of any terms of service and legal considerations when scraping data from websites.
+                </p>
+                <div class="rating">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+
+                </div>
+              </div>  
+              <div class="swiper-slide bg-white p-4">
+                <div class="profile d-flex align-items-center p-4">
+                    <img src="images/facilities/star-fill.svg" width="30px">
+                    <h6 class="m-0 ms-2">Random user1</h6>
+                </div>
+                <p>
+                    Remember to adapt the code to your specific needs and the structure of the Cafe Vietstock website. Additionally, be mindful of any terms of service and legal considerations when scraping data from websites.
+                </p>
+                <div class="rating">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill "></i>
+                    <i class="bi bi-star-fill "></i>
+                    <i class="bi bi-star-fill "></i>
+                    <i class="bi bi-star-fill "></i>
+
+                </div>
+              </div>  
+              <div class="swiper-slide bg-white p-4">
+                <div class="profile d-flex align-items-center p-4">
+                    <img src="images/facilities/star-fill.svg" width="30px">
+                    <h6 class="m-0 ms-2">Random user1</h6>
+                </div>
+                <p>
+                    Remember to adapt the code to your specific needs and the structure of the Cafe Vietstock website. Additionally, be mindful of any terms of service and legal considerations when scraping data from websites.
+                </p>
+                <div class="rating">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill"></i>
+
+                </div>
+              </div>           
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="col-lg-12 text-center mt-5">
+            <a href="#" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">Know More >>></a>
+        </div>
+    </div> 
+
+    <!-- Reach us -->
+    <h2 id="reachus" class ="mt-5 pt-4 mb-4 text-center fw-bold h-font">REACH US</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 p-4 mb-lg-0 mb-3 bg-white rounded">
+                <iframe class="w-100 rounded" height="320px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31345.845566573757!2d106.78245441179263!3d10.870050360181233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2sUniversity%20of%20Information%20Technology%20-%20VNUHCM!5e0!3m2!1sen!2s!4v1695391254591!5m2!1sen!2s" loading="lazy" ></iframe>            
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="bg-white p-4 rounded mb-4">
+                    <h5>Call us</h5>
+                    <a href="tel: 0986313973" class="d-inline-block mb-2 text-decoration-none text-dark">
+                        <i class="bi bi-telephone-fill"></i> 0986313973
+                    </a><br>
+                    <a href="tel: 0986313973" class="d-inline-block mb-2 text-decoration-none text-dark">
+                        <i class="bi bi-telephone-fill"></i> 0123456789
+                    </a>
+                </div>
+                <div class="bg-white p-4 rounded mb-4">
+                    <h5>Follow us</h5>
+                    <a href="https://www.facebook.com/huong.bt.581/" class="d-inline-block mb-3">
+                        <span class="badge bg-light text-dark fs-6 p-2">
+                            <i class="bi bi-facebook me-1"></i> Facebook</span>
+                    </a><br>
+                    <a href="https://github.com/UIT-21522130" class="d-inline-block mb-3">
+                        <span class="badge bg-light text-dark fs-6 p-2">
+                        <i class="bi bi-github me-1"></i> Github</span>
+                    </a><br>
+                    <a href="https://www.instagram.com/_huong3002_/" class="d-inline-block mb-3">
+                        <span class="badge bg-light text-dark fs-6 p-2">
+                        <i class="bi bi-instagram me-1"></i> Instagram</span>
+                    </a><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END -->
+    <div class="container-fluid bg-white mt-5">
+        <div class="row">
+            <div class="col-lg-4 p-4">
+                <h3 class="h-font fw-bold fs-3 mb-2">HRJ HOTEL</h3>
+                <p>
+                    Collaboration between educational institutions and employers is vital for addressing these dynamics and optimizing graduates' skills in their careers.
+                </p>
+            </div>
+            <div class="col-lg-4 p-4">
+                <h5 class="mb-3">Links</h5>
+                <a href="#" class="d-inline-block mb-2 text-dark text-decoration-none">Home</a><br>
+                <a href="#rooms" class="d-inline-block mb-2 text-dark text-decoration-none">Rooms</a><br>
+                <a href="#ourfacilities" class="d-inline-block mb-2 text-dark text-decoration-none">Facilities</a><br>
+                <a href="#reachus" class="d-inline-block mb-2 text-dark text-decoration-none">Contact us</a><br>
+                <a href="#" class="d-inline-block mb-2 text-dark text-decoration-none">About</a><br>
+
+            </div>
+            <div class="col-lg-4 p-4">
+                <h5 class="mb-3">Follow us</h5>
+                <a href="https://www.facebook.com/huong.bt.581/" class="d-inline-block text-dark text-decoration-none mb-2">
+                    <i class="bi bi-facebook me-1"></i> Facebook</span>
+                </a><br>
+                <a href="https://github.com/UIT-21522130" class="d-inline-block text-dark text-decoration-none mb-2">
+                    <i class="bi bi-github me-1"></i> Github</span>
+                </a><br>
+                <a href="https://www.instagram.com/_huong3002_/" class="d-inline-block text-dark text-decoration-none">
+                    <i class="bi bi-instagram me-1"></i> Instagram</span>
+                </a><br>
+            </div>
+        </div>
+    </div>
+
+    <h6 class="text-center bg-dark text-white p-3 m-0">Designed and Developed by our groups</h6>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
-        var swiper = new Swiper(".mySwiper", {
+        var swiper = new Swiper(".swiper-container", {
         spaceBetween: 30,
         effect: "fade",
         loop: true,
@@ -463,6 +611,39 @@
             disableonInteraction: false,
         }
         });
+        
+        var swiper = new Swiper(".swiper-testimonials", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            slidesPerView: "3",
+            loop:true,
+            coverflowEffect: {
+              rotate: 50,
+              stretch: 0,
+              depth: 100,
+              modifier: 1,
+              slideShadows: false,
+            },
+            pagination: {
+              el: ".swiper-pagination",
+            },
+            breakpoints:{
+                320:{
+                    slidesPerview:1,
+                },
+                640:{
+                    slidesPerview:1,
+                },
+                768:{
+                    slidesPerview:2,
+                },
+                1024:{
+                    slidesPerview:3,
+                },
+            }
+          });
     </script>
 
 </body> 
