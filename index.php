@@ -111,7 +111,7 @@
                 <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
                     <img src="images/rooms/1.jpg" class="card-img-top">
                     <div class="card-body">
-                      <h5>Double Srtandard</h5>
+                      <h5>DOUBLE STANDARD</h5>
                       <h6 class="mb-4">$10 per night</h6>
                       <div class="features mb-4">
                         <h6 class="mb-1">Features</h6>
@@ -167,7 +167,7 @@
                 <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
                     <img src="images/rooms/1.jpg" class="card-img-top">
                     <div class="card-body">
-                      <h5>Tripple Standard</h5>
+                      <h5>FAMILY SUPERIOR</h5>
                       <h6 class="mb-4">$10 per night</h6>
                       <div class="features mb-4">
                         <h6 class="mb-1">Features</h6>
@@ -223,7 +223,7 @@
                 <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
                     <img src="images/rooms/1.jpg" class="card-img-top">
                     <div class="card-body">
-                      <h5>Tripple Standard</h5>
+                      <h5>DOUBLE DELUXE</h5>
                       <h6 class="mb-4">$10 per night</h6>
                       <div class="features mb-4">
                         <h6 class="mb-1">Features</h6>
@@ -279,7 +279,7 @@
                 <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
                     <img src="images/rooms/1.jpg" class="card-img-top">
                     <div class="card-body">
-                      <h5>Tripple Standard</h5>
+                      <h5>DELUXE BALCONY</h5>
                       <h6 class="mb-4">$10 per night</h6>
                       <div class="features mb-4">
                         <h6 class="mb-1">Features</h6>
@@ -335,7 +335,7 @@
                 <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
                     <img src="images/rooms/1.jpg" class="card-img-top">
                     <div class="card-body">
-                      <h5>Tripple Standard</h5>
+                      <h5>TRIPPLE DELUXE</h5>
                       <h6 class="mb-4">$10 per night</h6>
                       <div class="features mb-4">
                         <h6 class="mb-1">Features</h6>
@@ -391,7 +391,7 @@
                 <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
                     <img src="images/rooms/1.jpg" class="card-img-top">
                     <div class="card-body">
-                      <h5>Tripple Standard</h5>
+                      <h5>EXCUTIVE SUITE</h5>
                       <h6 class="mb-4">$10 per night</h6>
                       <div class="features mb-4">
                         <h6 class="mb-1">Features</h6>
