@@ -116,17 +116,12 @@
                       <div class="features mb-4">
                         <h6 class="mb-1">Features</h6>
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
-                            2 Rooms
+                            1 Rooms
                         </span>
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
                             1 Bathroom
                         </span>
-                        <span class="badge rounded-pill bg-light text-dark text-wrap">
-                            1 Balcony
-                        </span>
-                        <span class="badge rounded-pill bg-light text-dark text-wrap">
-                            3 Sofa
-                        </span>
+
                       </div>
                       <div class="facilities mb-4">
                         <h6 class="mb-1">Facilities</h6>
@@ -140,10 +135,7 @@
                       <div class="guests mb-4">
                         <h6 class="mb-1">Guests</h6>
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
-                            5 Adults
-                        </span>
-                        <span class="badge rounded-pill bg-light text-dark text-wrap">
-                            4 Children
+                            2 Adults
                         </span>
                       </div>
                       <div class="rating mb-4">
@@ -168,21 +160,16 @@
                     <img src="images/rooms/1.jpg" class="card-img-top">
                     <div class="card-body">
                       <h5>FAMILY SUPERIOR</h5>
-                      <h6 class="mb-4">$10 per night</h6>
+                      <h6 class="mb-4">$50 per night</h6>
                       <div class="features mb-4">
                         <h6 class="mb-1">Features</h6>
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
-                            2 Rooms
+                            1 Rooms
                         </span>
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
                             1 Bathroom
                         </span>
-                        <span class="badge rounded-pill bg-light text-dark text-wrap">
-                            1 Balcony
-                        </span>
-                        <span class="badge rounded-pill bg-light text-dark text-wrap">
-                            3 Sofa
-                        </span>
+
                       </div>
                       <div class="facilities mb-4">
                         <h6 class="mb-1">Facilities</h6>
@@ -192,15 +179,16 @@
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
                             Television
                         </span>
+                        <span class="badge rounded-pill bg-light text-dark text-wrap">
+                        Air-conditione
+                        </span>
                       </div>
                       <div class="guests mb-4">
                         <h6 class="mb-1">Guests</h6>
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
-                            5 Adults
+                            3 Adults
                         </span>
-                        <span class="badge rounded-pill bg-light text-dark text-wrap">
-                            4 Children
-                        </span>
+
                       </div>
                       <div class="rating mb-4">
                         <h6 class="mb-1">Rating</h6>
@@ -224,7 +212,7 @@
                     <img src="images/rooms/1.jpg" class="card-img-top">
                     <div class="card-body">
                       <h5>DOUBLE DELUXE</h5>
-                      <h6 class="mb-4">$10 per night</h6>
+                      <h6 class="mb-4">$80 per night</h6>
                       <div class="features mb-4">
                         <h6 class="mb-1">Features</h6>
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
@@ -280,7 +268,7 @@
                     <img src="images/rooms/1.jpg" class="card-img-top">
                     <div class="card-body">
                       <h5>DELUXE BALCONY</h5>
-                      <h6 class="mb-4">$10 per night</h6>
+                      <h6 class="mb-4">$100 per night</h6>
                       <div class="features mb-4">
                         <h6 class="mb-1">Features</h6>
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
@@ -304,14 +292,17 @@
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
                             Television
                         </span>
+                        <span class="badge rounded-pill bg-light text-dark text-wrap">
+                         Arrow-through-heart-fill
+                        </span>
+                        <span class="badge rounded-pill bg-light text-dark text-wrap">
+                        Air-conditione
+                        </span>
                       </div>
                       <div class="guests mb-4">
                         <h6 class="mb-1">Guests</h6>
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
                             5 Adults
-                        </span>
-                        <span class="badge rounded-pill bg-light text-dark text-wrap">
-                            4 Children
                         </span>
                       </div>
                       <div class="rating mb-4">
@@ -336,7 +327,7 @@
                     <img src="images/rooms/1.jpg" class="card-img-top">
                     <div class="card-body">
                       <h5>TRIPPLE DELUXE</h5>
-                      <h6 class="mb-4">$10 per night</h6>
+                      <h6 class="mb-4">$200 per night</h6>
                       <div class="features mb-4">
                         <h6 class="mb-1">Features</h6>
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
@@ -359,6 +350,12 @@
                         </span>
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
                             Television
+                        </span>
+                        <span class="badge rounded-pill bg-light text-dark text-wrap">
+                         Arrow-through-heart-fill
+                        </span>
+                        <span class="badge rounded-pill bg-light text-dark text-wrap">
+                        Air-conditione
                         </span>
                       </div>
                       <div class="guests mb-4">
@@ -392,7 +389,7 @@
                     <img src="images/rooms/1.jpg" class="card-img-top">
                     <div class="card-body">
                       <h5>EXCUTIVE SUITE</h5>
-                      <h6 class="mb-4">$10 per night</h6>
+                      <h6 class="mb-4">$350 per night</h6>
                       <div class="features mb-4">
                         <h6 class="mb-1">Features</h6>
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
@@ -414,7 +411,19 @@
                             Wifi
                         </span>
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
+                         Arrow-through-heart-fill
+                        </span>
+                        <span class="badge rounded-pill bg-light text-dark text-wrap">
+                        Air-conditione
+                        </span>
+                        <span class="badge rounded-pill bg-light text-dark text-wrap">
+                        Griller
+                        </span>
+                        <span class="badge rounded-pill bg-light text-dark text-wrap">
                             Television
+                        </span>
+                        <span class="badge rounded-pill bg-light text-dark text-wrap">
+                            Breakfast
                         </span>
                       </div>
                       <div class="guests mb-4">
