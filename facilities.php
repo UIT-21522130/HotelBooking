@@ -42,8 +42,8 @@
             <div class="col-lg-4 col-md-6 mb-5 px-4">
                 <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
                     <div class="d-flex a;ign-items-center mb-2">
-                        <img src="images/facilities/wifi.svg" width="40px">
-                        <h5 class="m-2 ms-3">Wifi</h5>
+                    <img src="images/facilities/arrow-through-heart-fill.svg" width="60px">
+                    <h5 class="m-2 ms-3">Arrow-through-heart-fill</h5>
                     </div>  
                         <p>The PHP includes allow you to reuse common components like the header and footer across multiple pages. <br>The Swiper.js library is also being used for potential slideshow or carousel functionality.
                         </p>                                      
@@ -52,8 +52,8 @@
             <div class="col-lg-4 col-md-6 mb-5 px-4">
                 <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
                     <div class="d-flex a;ign-items-center mb-2">
-                        <img src="images/facilities/wifi.svg" width="40px">
-                        <h5 class="m-2 ms-3">Wifi</h5>
+                        <img src="images/facilities/maylanh.svg" width="60px">
+                        <h5 class="m-2 ms-3">Air-Conditioner</h5>
                     </div>  
                         <p>The PHP includes allow you to reuse common components like the header and footer across multiple pages. <br>The Swiper.js library is also being used for potential slideshow or carousel functionality.
                         </p>                                      
@@ -62,8 +62,8 @@
             <div class="col-lg-4 col-md-6 mb-5 px-4">
                 <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
                     <div class="d-flex a;ign-items-center mb-2">
-                        <img src="images/facilities/wifi.svg" width="40px">
-                        <h5 class="m-2 ms-3">Wifi</h5>
+                        <img src="images/facilities/nuong.svg" width="40px">
+                        <h5 class="m-2 ms-3">Griller</h5>
                     </div>  
                         <p>The PHP includes allow you to reuse common components like the header and footer across multiple pages. <br>The Swiper.js library is also being used for potential slideshow or carousel functionality.
                         </p>                                      
@@ -72,8 +72,8 @@
             <div class="col-lg-4 col-md-6 mb-5 px-4">
                 <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
                     <div class="d-flex a;ign-items-center mb-2">
-                        <img src="images/facilities/wifi.svg" width="40px">
-                        <h5 class="m-2 ms-3">Wifi</h5>
+                        <img src="images/facilities/tv.svg" width="45px">
+                        <h5 class="m-2 ms-3">Television</h5>
                     </div>  
                         <p>The PHP includes allow you to reuse common components like the header and footer across multiple pages. <br>The Swiper.js library is also being used for potential slideshow or carousel functionality.
                         </p>                                      
@@ -82,8 +82,8 @@
             <div class="col-lg-4 col-md-6 mb-5 px-4">
                 <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
                     <div class="d-flex a;ign-items-center mb-2">
-                        <img src="images/facilities/wifi.svg" width="40px">
-                        <h5 class="m-2 ms-3">Wifi</h5>
+                        <img src="images/facilities/tea.svg" width="40px">
+                        <h5 class="m-2 ms-3">Breakfast</h5>
                     </div>  
                         <p>The PHP includes allow you to reuse common components like the header and footer across multiple pages. <br>The Swiper.js library is also being used for potential slideshow or carousel functionality.
                         </p>                                      

@@ -236,6 +236,9 @@
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
                             Television
                         </span>
+                        <span class="badge rounded-pill bg-light text-dark text-wrap">
+                        Air-conditioner
+                        </span>
                       </div>
                       <div class="guests mb-4">
                         <h6 class="mb-1">Guests</h6>
@@ -296,7 +299,7 @@
                          Arrow-through-heart-fill
                         </span>
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
-                        Air-conditione
+                        Air-conditioner
                         </span>
                       </div>
                       <div class="guests mb-4">
@@ -355,7 +358,7 @@
                          Arrow-through-heart-fill
                         </span>
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
-                        Air-conditione
+                        Air-conditioner
                         </span>
                       </div>
                       <div class="guests mb-4">
@@ -414,7 +417,7 @@
                          Arrow-through-heart-fill
                         </span>
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
-                        Air-conditione
+                        Air-conditioner
                         </span>
                         <span class="badge rounded-pill bg-light text-dark text-wrap">
                         Griller
@@ -470,7 +473,7 @@
             </div>
             <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
                 <img src="images/facilities/arrow-through-heart-fill.svg" width="80px">
-                <h5 class="mt-3">arrow-through-heart-fill</h5>
+                <h5 class="mt-3">Arrow-through-heart-fill</h5>
             </div>
             <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
                 <img src="images/facilities/maylanh.svg" width="80px">
