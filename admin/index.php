@@ -8,26 +8,27 @@
     <?php require('inc/links.php')  ?>
     <style>
         div.login-form{
-            top:50%;
+            position: absolute; 
+            top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
+            width:400px;
         }
     </style>
 </head>
-<body class ="bg-light"></body>
-    <div>
+<body class ="bg-light">
+    
+    <div class = "Login-form text-center rounded bg-white shadow overflow-none ">
         <form>
-            <h4>Admin Login</h4>
-            <div>
+            <h4 class="bg-dark text-white py-3">Admin Login Panel</h4>
+            <div class="p-4">
                     <div class="mb-3">
-                        <label class = "form-label">Email address</label>
-                        <input type="text" class="form-control shadow-none text-center" placeholder="Admin Name">
+                        <input name="admin_name" type="text" class="form-control shadow-none text-center" placeholder="Admin Name">
                     </div>
                     <div class="mb-4">
-                        <label class = "form-label">Password</label>
-                        <input type="password" class="form-control shadow-none" placeholder="Password">
+                        <input name = "admin_pass" type="password" class="form-control shadow-none text-center" placeholder="Password">
                     </div>
-                    <button type="submit" class="btn -text-white custom-bg shadow-none" ></button>
+                    <button name="login" type="submit" class="btn text-white custom-bg shadow-none" >Login</button>
             </div>
         </form>
     </div>
