@@ -1,6 +1,8 @@
-<?php 
-    require('inc/db_config.php')
+<?php
+    require('inc/db_config.php');
+    require('inc/essentials.php')
 ?>
+
 
 <!DOCTYPE html>
 <html lang='vi'>
@@ -20,7 +22,7 @@
         }
     </style>
 </head>
-<body class ="bg-light">
+<body class ="bg-light"> 
     
     <div class = "login-form text-center rounded bg-white shadow overflow-none ">
         <form method="POST">
@@ -36,17 +38,23 @@
             </div>
         </form>
     </div>
-
-    <?php if(isset($_POST['login']))
+<?php
+        if(isset($_POST['login']))
         {
-            $filter_data= filteration($_POST);  /* callback ham loc du lieu post */
-            
-            $query = "SELECT * FROM 'admin' WHERE 'admin_name' = ? AND 'admin_pass' =? ";
-            $values = [$filter_data['admin_name'],$filter_data['admin_pass']];
-            data
+            $frm_data= filteration($_POST);
+            $query= "SELECT * FROM `admin_cred` WHERE `admin_name`=? AND `admin_pass`=? ";
+            $values = [$frm_data['admin_name'],$frm_data['admin_pass']];
+
+            $res= select($query,$values,"ss");
+            if($res->num_rows==1){
+                echo"got user";
+            }
+            else{
+                alert('error','Login failed -Invalid Credentials');
+            }
         }
-        
-    ?>
-    <?php require('inc/scripts.php') ?>
+?>
+
+
 </body>
 </html>
