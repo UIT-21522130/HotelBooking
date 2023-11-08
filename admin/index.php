@@ -1,8 +1,3 @@
-<?php
-    require('inc/db_config.php');
-    require('inc/essentials.php')
-?>
-
 
 <!DOCTYPE html>
 <html lang='vi'>
@@ -38,22 +33,7 @@
             </div>
         </form>
     </div>
-<?php
-        if(isset($_POST['login']))
-        {
-            $frm_data= filteration($_POST);
-            $query= "SELECT * FROM `admin_cred` WHERE `admin_name`=? AND `admin_pass`=? ";
-            $values = [$frm_data['admin_name'],$frm_data['admin_pass']];
 
-            $res= select($query,$values,"ss");
-            if($res->num_rows==1){
-                echo"got user";
-            }
-            else{
-                alert('error','Login failed -Invalid Credentials');
-            }
-        }
-?>
 
 
 </body>
