@@ -42,3 +42,7 @@ input[type=number] {
     top: 25px;
     right:25px;
 }
+#dashboard-menu{
+    position: fixed;
+    height: 100%;
+}

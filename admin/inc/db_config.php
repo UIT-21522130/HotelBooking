@@ -3,7 +3,8 @@
     $hname= 'localhost';
     $uname= 'root';
     $pass= '';
-    $db = 'hotelbooking';
+    $db = 'hotel_booking';
+
     $con = mysqli_connect($$hanme,$uname,$pass,$db);
 
     if(!$con) {
