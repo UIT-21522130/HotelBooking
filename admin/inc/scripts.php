@@ -12,8 +12,8 @@
     }
 </script>
 
-<style>
+ <style>
     .alert{
         margin-top: 50px;
     }
-</style>
+</style> 

@@ -133,11 +133,12 @@
             
             xhr.send('get_general');
         }
-        function upd_general(site_title_val, site_about_val)
+        function upd_general(site_title_val,site_about_val)
         {
-            let xhr= new XMLHttpRequest();
+            let xhr = new XMLHttpRequest();
             xhr.open("POST","ajax/settings_crud.php",true);
-            xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            
             xhr.onload= function(){
 
                 var myModal = document.getElementById('general-s');
