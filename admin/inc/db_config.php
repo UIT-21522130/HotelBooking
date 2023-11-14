@@ -61,7 +61,7 @@ function update($sql, $values, $datatypes){
         }
     }
     else{
-        die("Query cannot be prepared - Select");
+        die("Query cannot be prepared - Updated");
     }
 }
 ?>
