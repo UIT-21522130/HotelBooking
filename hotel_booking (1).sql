@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost
--- Thời gian đã tạo: Th10 13, 2023 lúc 06:17 PM
+-- Thời gian đã tạo: Th10 14, 2023 lúc 02:42 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -49,7 +49,7 @@ INSERT INTO `admin` (`sr_no`, `admin_name`, `admin_pass`) VALUES
 CREATE TABLE `settings` (
   `sr_no` int(11) NOT NULL,
   `site_title` varchar(50) NOT NULL,
-  `site_about` varchar(250) NOT NULL,
+  `site_about` varchar(150) NOT NULL,
   `shutdown` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -58,7 +58,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`sr_no`, `site_title`, `site_about`, `shutdown`) VALUES
-(1, 'Webdev', 'Collaboration between educational institutions and employers is vital for addressing these dynamics and optimizing graduates\' skills in their careers.', 0);
+(1, 'Webdev1cccww', 'LTweb33337', 1);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -69,6 +69,16 @@ INSERT INTO `settings` (`sr_no`, `site_title`, `site_about`, `shutdown`) VALUES
 --
 ALTER TABLE `settings`
   ADD PRIMARY KEY (`sr_no`);
+
+--
+-- AUTO_INCREMENT cho các bảng đã đổ
+--
+
+--
+-- AUTO_INCREMENT cho bảng `settings`
+--
+ALTER TABLE `settings`
+  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
