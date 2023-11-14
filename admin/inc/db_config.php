@@ -5,7 +5,7 @@
     $pass= '';
     $db = 'hotel_booking';
 
-    $con = mysqli_connect($$hanme,$uname,$pass,$db);
+    $con = mysqli_connect($hname,$uname,$pass,$db);
 
     if(!$con) {
         die("cannot connect DB".mysqli_connect_error());
