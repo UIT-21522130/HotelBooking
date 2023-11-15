@@ -44,7 +44,7 @@
                 </a>
                 <h5 class="mt-4">Follow us</h5>
                 <a href="https://www.facebook.com/huong.bt.581/" class="d-inline-block text-dark fs-5 me-2">
-                        <i class="bi bi-facebook me-1"></i> 
+                    <i class="bi bi-facebook me-1"></i> 
                 </a>
                 <a href="https://github.com/UIT-21522130" class="d-inline-block text-dark fs-5 me-2">
                     <i class="bi bi-github me-1"></i> 
