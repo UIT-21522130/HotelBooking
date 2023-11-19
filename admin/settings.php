@@ -226,17 +226,6 @@
                                 </div>
 
                             <div class="row" id="team-data">
-                                <div class="col-md-2 mb-3">
-                                    <div class="card bg-dark text-white">
-                                        <img src="../images/about/team.jpg" class="card-img">
-                                        <div class="card-img-overlay text-end">
-                                            <button type="button" class="btn btn-danger btn-sm shadow-none">
-                                               <i class="bi bi-trash"></i> Delete
-                                            </button>
-                                        </div>
-                                        <p class="card-text text-center px-3 py-2">Random Name</p>
-                                    </div>
-                                </div>
                             </div>
 
 
@@ -446,7 +435,7 @@
 
         function add_member()
         {
-            let data = new FromData();
+            let data = new FormData();
             data.append('name',member_name_inp.value);
             data.append('picture',member_picture_inp.files[0]);
             data.append('add_member','');
@@ -470,6 +459,7 @@
                     alert('success','New Member added!');
                     member_name_inp.value = '';
                     member_picture_inp.value = '';
+                    get_members();
                 }
 
             }
@@ -486,6 +476,24 @@
             }
             
             xhr.send('get_members');
+        }
+
+        function rem_member(val){
+            let xhr= new XMLHttpRequest();
+            xhr.open("POST","ajax/settings_crud.php",true);
+            xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+            
+            xhr.onload= function(){
+                if(this.responseText==1){
+                    alert('success','Member removed!');
+                    get_members();
+                }
+                else{
+                    alert('error','Server Down!');
+                }
+            }
+            
+            xhr.send('rem_member='+val);
         }
 
         window.onload = function(){

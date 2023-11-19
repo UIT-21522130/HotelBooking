@@ -1,6 +1,11 @@
 <?php
 
-    define('UPLOAD_IMAGE_PATH',$_SERVER['DOCUMENT_ROOT'].'Hotelbooking/images/');
+    //frontend purpose data
+    define('SITE_URL','https://127.0.0.1/Hotelbooking/');
+    define('ABOUT_IMG_PATH',SITE_URL.'images/about/');
+
+    //backend upload process needs this data
+    define('UPLOAD_IMAGE_PATH',$_SERVER['DOCUMENT_ROOT'].'/Hotelbooking/images/');
     define('ABOUT_FOLDER','about/');
 
 
@@ -52,6 +57,15 @@
             else{
                return 'upd_failed';
             }
+        }
+    }
+
+    function deleteImage($image, $folder){
+        if(unlink(UPLOAD_IMAGE_PATH.$folder.$image)){
+            return true;
+        }
+        else{
+            return false;
         }
     }
 
