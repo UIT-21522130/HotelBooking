@@ -221,14 +221,27 @@
                                 <div class="d-flex align-items-center justify-content-between mb-3">
                                     <h5 class="card-title m-0">Management Team</h5>
                                     <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal" data-bs-target="#team-s">
-                                        <i class = "bi bi-pencil-square"></i> Add
+                                        <i class = "bi bi-plus-square"></i> Add
                                     </button>
                                 </div>
-                                <div class="row" id="team-data">
 
+                            <div class="row" id="team-data">
+                                <div class="col-md-2 mb-3">
+                                    <div class="card bg-dark text-white">
+                                        <img src="../images/about/team.jpg" class="card-img">
+                                        <div class="card-img-overlay text-end">
+                                            <button type="button" class="btn btn-danger btn-sm shadow-none">
+                                               <i class="bi bi-trash"></i> Delete
+                                            </button>
+                                        </div>
+                                        <p class="card-text text-center px-3 py-2">Random Name</p>
+                                    </div>
                                 </div>
                             </div>
+
+
                         </div>
+                    </div>
 
                         <!-- Management Team modal -->
                         <div class="modal fade" id="team-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -433,7 +446,7 @@
 
         function add_member()
         {
-            let data = new Fromdata();
+            let data = new FromData();
             data.append('name',member_name_inp.value);
             data.append('picture',member_picture_inp.files[0]);
             data.append('add_member','');
@@ -443,24 +456,42 @@
             
             xhr.onload= function(){
                 console.log(this.responseText);
-            //     var myModal = document.getElementById('general-s');
-            //     var modal = bootstrap.Modal.getInstance(myModal);
-            //     modal.hide();
+                var myModal = document.getElementById('team-s');
+                var modal = bootstrap.Modal.getInstance(myModal);
+                modal.hide();
 
-            //    if(this.responseText == 1) {
-            //         alert('success','Changes saved');
-            //         get_general();
-            //    }
-            //    else {
-            //         alert('error','No changes made!');
-            //    }
+                if(this.responseText == 'inv_img'){
+                    alert('error','Only JPG and PNG images are allowed!');
+                }
+                else if(this.responseText == 'inv_size'){
+                    alert('error','Image size must be less than 2MB!');
+                }
+                else{
+                    alert('success','New Member added!');
+                    member_name_inp.value = '';
+                    member_picture_inp.value = '';
+                }
+
             }
-            // xhr.send(data);
+            xhr.send(data);
+        }
+
+        function get_members(){
+            let xhr= new XMLHttpRequest();
+            xhr.open("POST","ajax/settings_crud.php",true);
+            xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+            
+            xhr.onload= function(){
+                document.getElementById('team-data').innerHTML = this.responseText;
+            }
+            
+            xhr.send('get_members');
         }
 
         window.onload = function(){
             get_general();
             get_contacts();
+            get_members();
         }
     </script>
 </body>

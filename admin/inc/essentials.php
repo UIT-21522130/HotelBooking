@@ -1,6 +1,6 @@
 <?php
 
-    define('UPLOAD_IMAGE_PATH',$_SERVER['DOCUMENT_ROOT'].'hbwebsite/images/');
+    define('UPLOAD_IMAGE_PATH',$_SERVER['DOCUMENT_ROOT'].'Hotelbooking/images/');
     define('ABOUT_FOLDER','about/');
 
 
