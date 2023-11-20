@@ -583,9 +583,15 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-8 p-4 mb-lg-0 mb-3 bg-white rounded">
-                <iframe class="w-100 rounded" height="320px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31345.845566573757!2d106.78245441179263!3d10.870050360181233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2sUniversity%20of%20Information%20Technology%20-%20VNUHCM!5e0!3m2!1sen!2s!4v1695391254591!5m2!1sen!2s" loading="lazy" ></iframe>            
+                <iframe class="w-100 rounded" height="420px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31345.845566573757!2d106.78245441179263!3d10.870050360181233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2sUniversity%20of%20Information%20Technology%20-%20VNUHCM!5e0!3m2!1sen!2s!4v1695391254591!5m2!1sen!2s" loading="lazy" ></iframe>            
             </div>
             <div class="col-lg-4 col-md-4">
+                <div class="bg-white p-4 rounded mb-4">
+                    <h5>Address</h5>
+                    <a href="Đường Hàn Thuyên, khu phố 6 P, Thủ Đức, Thành phố Hồ Chí Minh, Vietnam" class="d-inline-block mb-2 text-decoration-none text-dark">
+                        <i class="bi bi-geo-fill"></i> University of Information Technology
+                    </a><br>
+                </div>
                 <div class="bg-white p-4 rounded mb-4">
                     <h5>Call us</h5>
                     <a href="tel: 0986313973" class="d-inline-block mb-2 text-decoration-none text-dark">
