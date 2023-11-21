@@ -151,7 +151,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="mb-3">
-                                                    <label class="form-label fw-bold">Ađdres</label>
+                                                    <label class="form-label fw-bold">Addres</label>
                                                     <input type="text" name="address" id="address_inp" class="form-control shadow-none" required>
                                                 </div>
                                                 <div class="mb-3">

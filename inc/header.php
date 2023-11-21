@@ -7,7 +7,7 @@
     $contact_r = mysqli_fetch_assoc(select($contact_q, $values,'i'));
 ?>
 
-<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-white px-lg-3 py-lg-2 shadow-sm sticky-top">
+<nav id="nav-bar" class="navbar navbar-expand-lg navbar-light bg-white px-lg-3 py-lg-2 shadow-sm sticky-top">
     <div class="container-fluid">
         <!-- chi can nhap vao HRJ HOTEL -> den trang index.php
                 fw: font-weight
@@ -109,7 +109,7 @@
                         </div>                            
                         <div class="form-group mb-3">
                             <label class="sr-only" for="number">Phone Number</label>
-                            <input type="number" class="form-control shadow-none" name='phonenumber' placeholder="Phone Number">                                
+                            <input id="number" type="number" class="form-control shadow-none" name='phonenumber' placeholder="Phone Number">                                
                         </div>
                         <div class="form-group mb-3">
                             <label class="sr-only" >Date of birth</label>

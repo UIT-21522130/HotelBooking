@@ -1,7 +1,7 @@
 <?php
 
     //frontend purpose data
-    define('SITE_URL',getServerURL().'/Hotelbooking/');
+    define('SITE_URL',getServerURL().'/hbwebsite/Hotelbooking-dev/Hotelbooking/');
     define('ABOUT_IMG_PATH',SITE_URL.'images/about/');
 
     //backend upload process needs this data

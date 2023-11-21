@@ -101,7 +101,8 @@
 
         if(deleteImage($img['picture'],ABOUT_FOLDER)){
             $q = "DELETE FROM `team_details` WHERE `sr_no`=?";
-            $res = delete($q,$values,'i');
+            $values = [$frm_data['rem_member']];
+            $res = delete($q, $values, 'i');
             echo $res;
         }
         else{
@@ -109,5 +110,6 @@
         }
 
     }
+    
 
 ?>
