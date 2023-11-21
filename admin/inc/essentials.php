@@ -1,13 +1,24 @@
 <?php
 
     //frontend purpose data
-    define('SITE_URL','https://127.0.0.1/Hotelbooking/');
+    define('SITE_URL',getServerURL().'/Hotelbooking/');
     define('ABOUT_IMG_PATH',SITE_URL.'images/about/');
 
     //backend upload process needs this data
     define('UPLOAD_IMAGE_PATH',$_SERVER['DOCUMENT_ROOT'].'/Hotelbooking/images/');
     define('ABOUT_FOLDER','about/');
 
+    function getServerURL()
+    {
+        $server_name = $_SERVER['SERVER_NAME'];
+        $server_port = $_SERVER['SERVER_PORT'];
+        $https = !empty($_SERVER['HTTPS']) && (strtolower($_SERVER['HTTPS']) == 'on' || $_SERVER['HTTPS'] == '1');
+
+        $port = in_array($server_port, [80, 443]) ? '' : ":$server_port";
+        $scheme = $https ? 'https' : 'http';
+
+        return "$scheme://$server_name$port";
+    }
 
     function adminLogin() {
         session_start();
