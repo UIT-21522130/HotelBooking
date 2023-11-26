@@ -49,7 +49,7 @@
     {
         $frm_data = filteration($_POST);
 
-        $img_r = uploadSVGImage($_FILES['icon'],FEATURES_FOLDER);
+        $img_r = uploadSVGImage($_FILES['icon'],FACILITIES_FOLDER);
 
         if($img_r == 'inv_img'){
             echo $img_r;
@@ -78,7 +78,7 @@
     {
         $res = selectAll('facilities');
         $i =1;
-        $path = FEATURES_IMG_PATH;
+        $path = FACILITIES_IMG_PATH;
         while($row = mysqli_fetch_assoc($res)){
             echo <<<data
                 <tr>
