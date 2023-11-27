@@ -114,9 +114,8 @@
                                         <thead class="stickey-top">
                                             <tr class="bg-dark text-light">
                                                 <th scope="col">#</th>
-                                                <th scope="col">Icon</th>
                                                 <th scope="col">Name</th>
-                                                <th scope="col">Description</th>
+                                                <!-- <th scope="col">Description</th> -->
                                                 <th scope="col">Action</th>
                                             </tr>
                                         </thead>
@@ -166,17 +165,13 @@
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="facility_name" class="form-label fw-bold">Name</label>
-                            <input type="text" id="facility_name" name="facility_name"  class="form-control shadow-none" required>
+                            <label class="form-label fw-bold">Name</label>
+                            <input type="text" name="facility_name"  class="form-control shadow-none" required>
                         </div>
-                        <div class="mb-3">
-                            <label for="facility_icon" class="form-label fw-bold">Icon(only upload .svg)</label>
-                            <input type="file" id="facility_icon" name="facility_icon"  accept=".svg" class="form-control shadow-none" >
-                        </div>
-                        <div class="mb-3">
-                            <label for="facility_desc" class="form-label">Description</label>
-                            <textarea id="facility_desc" name="facility_desc" class="form-control shadow-none rows='3' "></textarea>
-                        </div>
+                       <!--  <div class="mb-3">
+                            <label  class="form-label">Description</label>
+                            <textarea  name="facility_desc" class="form-control shadow-none rows='3' "></textarea>
+                        </div> -->
                     </div>
                     <div class="modal-footer">
                         <button type="reset"  class="btn text-secondary shadow-none" da ta-bs-dismiss="modal">Cancel</button>
@@ -265,40 +260,34 @@
             add_facility();
         });
         /* function add facilities */
+       
         function add_facility()
         {
             let data = new FormData();
             data.append('name',facility_s_form.elements['facility_name'].value);
-            data.append('icon',facility_s_form.elements['facility_icon'].files[0]);
-            data.append('desc',facility_s_form.elements['facility_desc'].value);
             data.append('add_facility','');
 
             let xhr = new XMLHttpRequest();
             xhr.open("POST","ajax/features_facilities.php",true);
             
             xhr.onload= function(){
+                console.log(this.responseText);
                 var myModal = document.getElementById('facility-s');
                 var modal = bootstrap.Modal.getInstance(myModal);
                 modal.hide();
 
-                if(this.responseText == 'inv_img'){
-                    alert('error','Only SVG images are allowed!');
-                }
-                else if (this.responseText == 'inv_size') {
-                    alert('error','Image should be less than 2MB');
-                }
-                else if(this.responseText == 'upd_failed'){
-                    alert('error','Image upload failed! Server down!');
-                }
-                else{
-                    alert('success','New Facility added!'+this.responseText);
-                    facility_s_form.reset();
+                if(this.responseText == 1){
+                    alert('success','New Facility added!');
+                    facility_s_form.elements['facility_name'].value = '';
                     get_facilities();
                 }
-            };
+                else{
+                alert('error','Server Down!');
+                }
+
+            }
             xhr.send(data);
         }
-
 
         function get_facilities(){
             let xhr= new XMLHttpRequest();
@@ -310,6 +299,28 @@
             }
             
             xhr.send('get_facilities');
+        }
+        
+        function rem_facility(val){
+            let xhr= new XMLHttpRequest();
+            xhr.open("POST","ajax/features_facilities.php",true);
+            xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+            
+            xhr.onload= function(){
+                if(this.responseText==1){
+                    alert('success','Feature removed!');
+                    get_facilities();
+                }
+                else if(this.responseText == 'room_added') {
+                    alert('success','Feature is added in room!');
+                }
+                else{
+                    alert('error','Server Down!');
+                  
+                }
+            }
+            
+            xhr.send('rem_facility='+val);
         }
 
 

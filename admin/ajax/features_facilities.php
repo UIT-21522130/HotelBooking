@@ -45,49 +45,29 @@
 
     }
 
-    if(isset($_POST['add_facility']))
-    {
+
+    //FACILITIES
+    if(isset($_POST['add_facility'])){
         $frm_data = filteration($_POST);
-
-        $img_r = uploadSVGImage($_FILES['icon'],FACILITIES_FOLDER);
-
-        if($img_r == 'inv_img'){
-            echo $img_r;
-        }
-        else if($img_r == 'inv_size'){
-            echo $img_r;
-        }
-        else if($img_r == 'upd_failed'){
-            echo $img_r;
-        }
-        else{
-            $q = "INSERT INTO `facilities` (`icon`, `name`, `description`) VALUES (?, ?, ?)";
-            $values = [$img_r, $frm_data['name'], $frm_data['description']];
-            $res = insert($q, $values, 'sss');
-
-            if ($res === TRUE) {
-                echo "Record added successfully";
-            } else {
-                echo "Error inserting record: " . mysqli_error($conn);
-            }
-        }
+        $q = "INSERT INTO `facilities`(`name`) VALUES (?) ";
+        $values = [$frm_data['name']];
+        $res = insert($q,$values,'s');
+        echo $res;
 
     }
-    
+
     if(isset($_POST['get_facilities']))
     {
         $res = selectAll('facilities');
         $i =1;
-        $path = FACILITIES_IMG_PATH;
         while($row = mysqli_fetch_assoc($res)){
             echo <<<data
                 <tr>
                     <td>$i</td>
-                    <td><img src="$path$row[icon]" width="30px"></td>
                     <td>$row[name]</td>
-                    <td>$row[description]</td>
+                  
                     <td>
-                        <button type="button" onclick="rem_feature($row[id])" class="btn btn-danger btn-sm shadow-none">
+                        <button type="button" onclick="rem_facility($row[id])" class="btn btn-danger btn-sm shadow-none">
                         <i class="bi bi-trash"></i> Delete
                         </button>
                     </td>
@@ -96,4 +76,18 @@
             $i++;
         }
     }
+
+    if(isset($_POST['rem_facility']))
+    {
+        $frm_data = filteration($_POST);
+        $values = [$frm_data['rem_facility']];
+        
+        $q = "DELETE FROM `facilities` WHERE `id`=?";
+        $res = delete($q,$values,'i');
+        echo $res;  
+
+    }
+  
+
+
 ?>
