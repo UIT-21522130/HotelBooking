@@ -48,7 +48,8 @@
         }
     }
 
-    if(isset($_POST['rem_image'])){
+    if(isset($_POST['rem_image']))
+    {
         $frm_data = filteration($_POST);
         $values = [$frm_data['rem_image']];
 
@@ -58,6 +59,7 @@
 
         if(deleteImage($img['image'], CAROUSEL_FOLDER)){
             $q = "DELETE FROM `carousel` WHERE `sr_no`=?";
+            $values = [$frm_data['rem_image']];
             $res = delete($q, $values, 'i');
             echo $res;
         }
@@ -66,6 +68,7 @@
         }
 
     }
+
     
     
 

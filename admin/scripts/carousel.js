@@ -64,7 +64,7 @@ function rem_image(val){
         else{
             alert('error','Server Down!');
         }
-    }
+    };
     
     xhr.send('rem_image='+val);
 }
