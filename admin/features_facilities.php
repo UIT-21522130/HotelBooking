@@ -310,7 +310,7 @@
             
             xhr.onload= function(){
                 if(this.responseText==1){
-                    alert('success','Feature removed!');
+                    alert('success','Facility removed!');
                     get_facilities();
                 }
                 else if(this.responseText == 'room_added') {

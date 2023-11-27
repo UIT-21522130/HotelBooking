@@ -76,7 +76,7 @@
             data;
             $i++;
         }
-    }
+    }   
 
     if(isset($_POST['rem_facility']))
     {
