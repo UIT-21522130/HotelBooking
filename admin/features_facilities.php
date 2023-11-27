@@ -54,7 +54,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang = "vi">
+<html lang = "vi">  
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -174,7 +174,7 @@
                         </div> 
                     </div>
                     <div class="modal-footer">
-                        <button type="reset"  class="btn text-secondary shadow-none" da ta-bs-dismiss="modal">Cancel</button>
+                        <button type="reset"  class="btn text-secondary shadow-none" data-bs-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn custom-bg text-white shadow-none">Submit</button>
                     </div>
                 </div>

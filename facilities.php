@@ -44,12 +44,10 @@
                 </div>
             data;
         } 
- 
 
     ?>
          
-           
-
+        
         <!-- END -->
     <?php require('inc/footer.php');?>
 
