@@ -49,9 +49,9 @@
     //FACILITIES
     if(isset($_POST['add_facility'])){
         $frm_data = filteration($_POST);
-        $q = "INSERT INTO `facilities`(`name`) VALUES (?) ";
-        $values = [$frm_data['name']];
-        $res = insert($q,$values,'s');
+        $q = "INSERT INTO `facilities`(`name`,`description`) VALUES (?,?) ";
+        $values = [$frm_data['name'],$frm_data['desc']];
+        $res = insert($q,$values,'ss');
         echo $res;
 
     }
@@ -65,6 +65,7 @@
                 <tr>
                     <td>$i</td>
                     <td>$row[name]</td>
+                    <td>$row[description]</td>
                   
                     <td>
                         <button type="button" onclick="rem_facility($row[id])" class="btn btn-danger btn-sm shadow-none">

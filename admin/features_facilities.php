@@ -115,7 +115,7 @@
                                             <tr class="bg-dark text-light">
                                                 <th scope="col">#</th>
                                                 <th scope="col">Name</th>
-                                                <!-- <th scope="col">Description</th> -->
+                                                 <th scope="col">Description</th>
                                                 <th scope="col">Action</th>
                                             </tr>
                                         </thead>
@@ -168,10 +168,10 @@
                             <label class="form-label fw-bold">Name</label>
                             <input type="text" name="facility_name"  class="form-control shadow-none" required>
                         </div>
-                       <!--  <div class="mb-3">
+                         <div class="mb-3">
                             <label  class="form-label">Description</label>
                             <textarea  name="facility_desc" class="form-control shadow-none rows='3' "></textarea>
-                        </div> -->
+                        </div> 
                     </div>
                     <div class="modal-footer">
                         <button type="reset"  class="btn text-secondary shadow-none" da ta-bs-dismiss="modal">Cancel</button>
@@ -265,6 +265,7 @@
         {
             let data = new FormData();
             data.append('name',facility_s_form.elements['facility_name'].value);
+            data.append('desc',facility_s_form.elements['facility_desc'].value);
             data.append('add_facility','');
 
             let xhr = new XMLHttpRequest();
@@ -279,6 +280,7 @@
                 if(this.responseText == 1){
                     alert('success','New Facility added!');
                     facility_s_form.elements['facility_name'].value = '';
+                    facility_s_form.elements['facility_desc'].value = '';
                     get_facilities();
                 }
                 else{
