@@ -1,15 +1,16 @@
 <?php
-
-    //frontend purpose data
+    //Kiều
     // define('SITE_URL',getServerURL().'/hbwebsite/Hotelbooking-dev/hotelbooking/');
+    //** Hương
     define('SITE_URL', 'http://127.0.0.1/hbwebsite/Hotelbooking-dev/hotelbooking/');
   
     define('ABOUT_IMG_PATH',SITE_URL.'images/about/');
     define('CAROUSEL_IMG_PATH',SITE_URL.'images/carousel/');
     define('FACILITIES_IMG_PATH',SITE_URL.'images/facilities/');
 
-
+    // ** Hương
     define('UPLOAD_IMAGE_PATH',$_SERVER['DOCUMENT_ROOT'].'/hbwebsite/Hotelbooking-dev/hotelbooking/images/');
+    // Kiều
     // define('UPLOAD_IMAGE_PATH','/Applications/XAMPP/xamppfiles/htdocs/Hotelbooking/images/');
     define('ABOUT_FOLDER','about/');
     define('CAROUSEL_FOLDER','carousel/'); 
