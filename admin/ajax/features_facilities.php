@@ -38,9 +38,11 @@
     {
         $frm_data = filteration($_POST);
         $values = [$frm_data['rem_feature']];
+
+        // $check_q = 
         
         $q = "DELETE FROM `features` WHERE `id`=?";
-        $res = delete($q,$values,'i');
+        $res = delete($q, $values,'i');
         echo $res;  
 
     }
