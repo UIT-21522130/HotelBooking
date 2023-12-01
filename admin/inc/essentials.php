@@ -2,19 +2,27 @@
     //Kiều
     // define('SITE_URL',getServerURL().'/hbwebsite/Hotelbooking-dev/hotelbooking/');
     //** Hương
-    define('SITE_URL', 'http://127.0.0.1/hbwebsite/Hotelbooking-dev/hotelbooking/');
-  
+    //define('SITE_URL', 'http://127.0.0.1/hbwebsite/Hotelbooking-dev/hotelbooking/');
+    //Minh
+    define('SITE_URL',getServerURL().'/Hotelbooking/');
+
     define('ABOUT_IMG_PATH',SITE_URL.'images/about/');
     define('CAROUSEL_IMG_PATH',SITE_URL.'images/carousel/');
     define('FACILITIES_IMG_PATH',SITE_URL.'images/facilities/');
+    define('ROOMS_IMG_PATH',SITE_URL.'images/rooms/');
+
 
     // ** Hương
-    define('UPLOAD_IMAGE_PATH',$_SERVER['DOCUMENT_ROOT'].'/hbwebsite/Hotelbooking-dev/hotelbooking/images/');
+    //define('UPLOAD_IMAGE_PATH',$_SERVER['DOCUMENT_ROOT'].'/hbwebsite/Hotelbooking-dev/hotelbooking/images/');
     // Kiều
     // define('UPLOAD_IMAGE_PATH','/Applications/XAMPP/xamppfiles/htdocs/Hotelbooking/images/');
+    //Minh
+    define('UPLOAD_IMAGE_PATH','/xampp/htdocs/Hotelbooking/images');
+
     define('ABOUT_FOLDER','about/');
     define('CAROUSEL_FOLDER','carousel/'); 
     define('FACILITIES_FOLDER','facilities/'); 
+    define('ROOMS_FOLDER','rooms/'); 
     
     
     function getServerURL()
