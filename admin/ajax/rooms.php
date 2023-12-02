@@ -249,7 +249,7 @@
 
         $path = ROOMS_IMG_PATH;
 
-        while($row = mysql_fetch_assoc($res))
+        while($row = mysqli_fetch_assoc($res))
         {
             if($row['thumb']==1){
                 $thumb_btn = "<i class='bi bi-check-lg text-light bg-success px-2 py-1 rounded fs-5'></i>";
