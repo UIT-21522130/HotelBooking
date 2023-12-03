@@ -103,7 +103,7 @@
     <div class="container">
         <div class="row">
         <?php 
-                $room_res = select("SELECT * FROM `rooms` WHERE `status`=? AND `removed`=?  ORDER BY `id` DESC LIMIT 3",[1,0],'ii');
+                $room_res = select("SELECT * FROM `rooms` WHERE `status`=? AND `removed`=? ORDER BY `id` DESC LIMIT 3 ",[1,0],'ii');
                 while ($roomdata = mysqli_fetch_assoc($room_res)) 
                 {
                     //get features of room
@@ -139,45 +139,50 @@
                     }
                     //print room card
                     echo <<< data
-
-
-                    <div class="col-lg-4 col-md-6 my-3">
-                        <div class="card border-0  shadow" style="max-width:350px; margin:auto;">
+                        <div class="col-lg-4 col-md-6 my-3">
+                        <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
                             <img src="$room_thumb" class="card-img-top">
-                               <div class="card-body">
-                                    <h5>$room_data[name]</h5>
-                                    <div class="features mb-4">
-                                        <h6 class="mb-1">Features</h6>
-                                        $feature_data  
-                                    </div>
-                                    <div class="facilities mb-3">
-                                        <h6 class="mb-1">Facilities</h6>
-                                        $facilities_data
-                                    </div>
-                                    <div class="guests">
-                                        <h6 class="mb-1">Guests</h6>
-                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                            $room_data[adult] Adults
-                                        </span>
-                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                            $room_data[children] Children
-                                        </span>
-                                    </div>
-                                    <div class="rating">
-                                        <i class="bi bi-star-fill text-warning"></i>
-                                        <i class="bi bi-star-fill text-warning"></i>
-                                        <i class="bi bi-star-fill text-warning"></i>
-                                        <i class="bi bi-star-fill text-warning"></i>
-                                        <i class="bi bi-star-fill text-warning"></i>
-                                    </div>
-                                <div class="d-flex justify-content-evenly mb-2">
-                                    <a href="#" class="btn btn-sm w-100 text-white custom-bg shadow-none mb-2">Book Now</a>
-                                    <a href="room_details.php?id=$room_data[id]" class="btn btn-sm w-100 btn-outline-dark shadow-none">More details</a>
-                                </div>
+                            <div class="card-body">
+                            <h5>$room_data[name]</h5>
+                            <h6 class="mb-4">$room_data[price] VND per night</h6>
+                            <div class="features mb-4">
+                                <h6 class="mb-1">Features</h6>
+                                $features_data
+        
                             </div>
+                            <div class="facilities mb-4">
+                                <h6 class="mb-1">Facilities</h6>
+                                $facilities_data
+                            </div>
+                            <div class="rating mb-4">
+                                <h6 class="mb-1">Rating</h6>
+                                <span class="badge rounded-pill bg-light">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                </span>
+                            </div>
+                            <div class="guests mb-4">
+                                <h6 class="mb-1">Guests</h6>
+                                <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                    $room_data[adult] Adults
+                                </span>
+                                <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                    $room_data[children] Children
+                                </span>
+                            </div>
+                            <div class="d-flex justify-content-evenly mb-2">
+                                <a href="#" class="btn btn-sm text-white custom-bg shadow-none">Book Now</a>
+                                <a href="room_details.php?id=$room_data[id]" class="btn btn-sm btn-outline-dark shadow-none">More details</a>
+                            </div>
+                            </div>
+                        </div>
                     </div>
                     data;
                 }
+
                 ?>
 
             <div class="col-lg-12 text-center mt-5">
@@ -188,22 +193,22 @@
     <!-- Our facilities -->
     <h2 id="ourfacilities" class ="mt-5 pt-4 mb-4 text-center fw-bold h-font">OUR FACILITIES</h2>
     <div class="container">
-            <div class="row justify-content-evenly px-lg-0 px-md-0 px-5">
-         
-            <?php
+        <div class="row justify-content-evenly px-lg-0 px-md-0 px-5">
+            <?php 
                 $res= mysqli_query($con,"SELECT * FROM `facilities` ORDER BY `id` DESC LIMIT 5 ");
                 $path= FACILITIES_IMG_PATH;
-                while ($row = mysqli_fetch_assoc($res)) {
-                    echo<<<data
+                 while ($row = mysqli_fetch_assoc($res)) {
+                     echo <<<data
                         <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
-                        <img src="$path$row[icon]" width="50px">
-                        <h5 class="mt-3">$row[name]</h5>
+                            <img src="$path$row[icon]" width="80px">
+                            <h5 class="mt-3">$row[name]</h5>
                         </div>
-                    data;
-                } 
+                     data;
+                 } 
             ?>
+           
             <div class="col-lg-12 text-center mt-5">
-                <a href="facilities.php" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">More Facilities >>></a>
+                <a href="#" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">More Facilities >>></a>
             </div>
         </div>
     </div>
