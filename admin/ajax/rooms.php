@@ -77,7 +77,7 @@
                 $status = "<button onclick = 'toggle_status($row[id], 1)' class ='btn btn-warning btn-sm shadow-none'>inactive</button>";
             }
 
-            $data.="
+            $data="
                 <tr class = 'align-middle'>
                     <td>$i</td>
                     <td>$row[name]</td>

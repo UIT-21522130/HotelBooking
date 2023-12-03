@@ -1,10 +1,10 @@
 <?php
     //Kiều
-    // define('SITE_URL',getServerURL().'/hbwebsite/Hotelbooking-dev/hotelbooking/');
+     define('SITE_URL','http://localhost/Hotelbooking/');
     //** Hương
     //define('SITE_URL', 'http://127.0.0.1/hbwebsite/Hotelbooking-dev/hotelbooking/');
     //Minh
-    define('SITE_URL',getServerURL().'/Hotelbooking/');
+    //define('SITE_URL',getServerURL().'/Hotelbooking/');
 
     define('ABOUT_IMG_PATH',SITE_URL.'images/about/');
     define('CAROUSEL_IMG_PATH',SITE_URL.'images/carousel/');
