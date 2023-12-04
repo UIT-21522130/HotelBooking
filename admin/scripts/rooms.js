@@ -209,7 +209,7 @@ let add_room_form = document.getElementById("add_room_form");
                 else{
                     alert('success','New Image added!','image-alert');
                     room_images(add_image_form.elements['room_id'].value,document.querySelector('#room-images .modal-title').innerText)
-                    add_image_form.reset();
+                    add_image_form.reset();                    
                 }
             }
             xhr.send(data);
@@ -288,9 +288,9 @@ let add_room_form = document.getElementById("add_room_form");
                 data.append('remove_room','');
 
                 let xhr = new XMLHttpRequest();
-            xhr.open("POST","ajax/rooms.php",true);
+                xhr.open("POST","ajax/rooms.php",true);
             
-            xhr.onload= function(){
+                xhr.onload= function(){
 
                 if(this.responseText == 1){
                     alert('success','Room Removed!');

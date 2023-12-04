@@ -64,7 +64,7 @@
 
     if(isset($_POST['get_all_rooms']))
     {
-        $res = select("SELECT * FROM `rooms` WHERE `removed` =?",[0],'1');
+        $res = select("SELECT * FROM `rooms` WHERE `removed` =?",[0],'i');
         $i = 1;
 
         $data = "";
@@ -280,7 +280,7 @@
         $frm_data = filteration($_POST);
         $values = [$frm_data['image_id'],$frm_data['room_id']];
 
-        $pre_q = "SELECT * FROM `carousel` WHERE `sr_no`=? AND `room_id`=?";
+        $pre_q = "SELECT * FROM `room_images` WHERE `sr_no`=? AND `room_id`=?";
         $res = select($pre_q, $values,'ii');
         $img = mysqli_fetch_assoc($res);
 
@@ -310,13 +310,13 @@
         echo $res;
     }
 
-    if(isset($_POST['thumb_image']))
+    if(isset($_POST['remove_room']))
     {
         $frm_data = filteration($_POST);
         
-        $res1 = select("SELECT * FROM `room_images` WHERE `room_id`=?",[$frm_data['room_id']],$frm_data['image_id'],'i');
+        $res1 = select("SELECT * FROM `room_images` WHERE `room_id`=?",[$frm_data['room_id']],'i');
 
-        while($row = mysqli_fetch_assoc($re1))
+        while($row = mysqli_fetch_assoc($res1))
         {
             deleteImage($row['image'],ROOMS_FOLDER);
         }
@@ -324,7 +324,7 @@
         $res2 = delete("DELETE FROM `room_images` WHERE `room_id`=?",[$frm_data['room_id']],'i');
         $res3 = delete("DELETE FROM `room_features` WHERE `room_id`=?",[$frm_data['room_id']],'i');
         $res4 = delete("DELETE FROM `room_facilities` WHERE `room_id`=?",[$frm_data['room_id']],'i');
-        $res5 = delete("UPDATE `rooms` SET `removed`=? WHERE `id`=?",[1,$frm_data['room_id']],'ii');
+        $res5 = update("UPDATE `rooms` SET `removed`=? WHERE `id`=?",[1,$frm_data['room_id']],'ii');
 
         if($res2 || $res3 || $res4 || $res5)
         {
