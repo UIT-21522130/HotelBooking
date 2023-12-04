@@ -72,7 +72,7 @@
             <div class="col-lg-9 col-md-12 px-4">
                 <?php 
                 $room_res = select("SELECT * FROM `rooms` WHERE `status`=? AND `removed`=? ",[1,0],'ii');
-                while ($roomdata = mysqli_fetch_assoc($room_res)) 
+                while ($room_data = mysqli_fetch_assoc($room_res)) 
                 {
                     //get features of room
                     $fea_q =mysqli_query($con,"SELECT f.NAME FROM `features` f
