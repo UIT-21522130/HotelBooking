@@ -18,7 +18,7 @@
             redirect('rooms.php');
         }
         $data = filteration($_GET);
-        $room_res = select("SELECT * FROM `rooms` WHERE `id`=? AND `status`=? AND `removed`=?",[$room_data['id'],1,0],'iii');
+        $room_res = select("SELECT * FROM `rooms` WHERE `id`=? AND `status`=? AND `removed`=?",[$data['id'],1,0],'iii');
         
         if(mysqli_num_rows($room_res) == 0) {
             redirect('rooms.php');
@@ -30,7 +30,7 @@
     <div class="container">
         <div class="row">
         
-        <div class="col-12 my-5 mb-4 px-4">
+        <div class="col-12 my-5  px-4">
             <h2 class="fw-bold "><?php echo $room_data['name'] ?></h2>
             <div style="font-size:14px;">
                 <a href="index.php" class="text-secondary text-decoration-none">HOME</a>
@@ -39,7 +39,7 @@
             </div>
         </div>  
          
-        <div class="col-lg-7 col-md-12 px-4 ">
+        <div class="col-lg-7 col-md-12 px-4">
             <div id="roomCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <?php 
@@ -96,14 +96,14 @@
                     echo <<< rating
                         <div class="mb-3">
                         <i class="bi bi-star-fill text-warning"></i>
-                        <i class="bi bi-star-fill "></i>
-                        <i class="bi bi-star-fill "></i>
-                        <i class="bi bi-star-fill "></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
                         <i class="bi bi-star-fill "></i>
                         </div>
                     rating;
 
-                    $fea_q =mysqli_query($con,"SELECT f.NAME FROM `features` f
+                    $fea_q =mysqli_query($con,"SELECT f.name FROM `features` f
                     INNER JOIN `room_features` rfea ON f.id = rfea.features_id
                     WHERE rfea.room_id = '$room_data[id]'");
                     
@@ -122,7 +122,7 @@
                         </div>
                     features;
 
-                    $fac_q = mysqli_query($con,"SELECT f.NAME FROM `features` f
+                    $fac_q = mysqli_query($con,"SELECT f.name FROM `facilities` f
                     INNER JOIN `room_facilities` rfac ON f.id = rfac.facilities_id
                     WHERE rfac.room_id = '$room_data[id]'");
 
@@ -191,7 +191,7 @@
                         <i class="bi bi-star-fill text-warning"></i>
                         <i class="bi bi-star-fill text-warning"></i>
                         <i class="bi bi-star-fill text-warning"></i>
-                        <i class="bi bi-star-fill"></i>
+                        
 
                     </div>
                 </div>

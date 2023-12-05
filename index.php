@@ -120,13 +120,13 @@
 
                 }
                     //get facilities off room 
-                    $fac_q = mysqli_query($con,"SELECT f.name FROM `features` f
+                    $fac_q = mysqli_query($con,"SELECT f.name FROM `facilities` f
                     INNER JOIN `room_facilities` rfac ON f.id = rfac.facilities_id
                     WHERE rfac.room_id = '$room_data[id]'");
 
                     $facilities_data = "";
                     while ($fac_row = mysqli_fetch_assoc($fac_q)) {
-                            $facilities_data .= "<span class='badge rounded-pill bg-light text-dark text-wrap me-1 mb-1'>
+                            $facilities_data .= "<span class='badge rounded-pill bg-light text-dark text-wrap '>
                             $fac_row[name]
                             </span>";
                     }
@@ -208,7 +208,7 @@
             ?>
            
             <div class="col-lg-12 text-center mt-5">
-                <a href="#" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">More Facilities >>></a>
+                <a href="facilities.php" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">More Facilities >>></a>
             </div>
         </div>
     </div>

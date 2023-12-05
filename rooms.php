@@ -89,7 +89,7 @@
 
                 }
                     //get facilities off room 
-                    $fac_q = mysqli_query($con,"SELECT f.NAME FROM `features` f
+                    $fac_q = mysqli_query($con,"SELECT f.name FROM `facilities` f
                     INNER JOIN `room_facilities` rfac ON f.id = rfac.facilities_id
                     WHERE rfac.room_id = '$room_data[id]'");
 
@@ -114,7 +114,7 @@
                                     <img src="$room_thumb" class="img-fluid rounded">
                                 </div>
                                 <div class="col-md-5 px-lg-3 px-md-3 px-0">
-                                    <h5 class="mb-3">$room_data[name]</h5>
+                                    <h2 class="mb-3">$room_data[name]</h2>
                                     <div class="features mb-3">
                                         <h6 class="mb-1">Features</h6>
                                         $features_data  
