@@ -75,16 +75,17 @@
                 while ($room_data = mysqli_fetch_assoc($room_res)) 
                 {
                     //get features of room
-                    $fea_q =mysqli_query($con,"SELECT f.NAME FROM `features` f
+                    $fea_q =mysqli_query($con,"SELECT f.name FROM `features` f
                     INNER JOIN `room_features` rfea ON f.id = rfea.features_id
                     WHERE rfea.room_id = '$room_data[id]'");
                     
-                    $feature_data = "";
+                    $features_data = "";
                     while($fea_row = mysqli_fetch_assoc($fea_q)) 
                     {
-                        $feature_data .= "<span class='badge rounded-pill bg-light text-dark text-wrap me-1 mb-1'>
+                        $features_data .= "<span class='badge rounded-pill bg-light text-dark text-wrap me-1 mb-1'>
                             $fea_row[name]
                     </span>";
+                    
 
                 }
                     //get facilities off room 
@@ -116,7 +117,7 @@
                                     <h5 class="mb-3">$room_data[name]</h5>
                                     <div class="features mb-3">
                                         <h6 class="mb-1">Features</h6>
-                                        $feature_data  
+                                        $features_data  
                                     </div>
                                     <div class="facilities mb-3">
                                         <h6 class="mb-1">Facilities</h6>

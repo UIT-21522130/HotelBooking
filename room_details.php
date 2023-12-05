@@ -107,10 +107,10 @@
                     INNER JOIN `room_features` rfea ON f.id = rfea.features_id
                     WHERE rfea.room_id = '$room_data[id]'");
                     
-                    $feature_data = "";
+                    $features_data = "";
                     while($fea_row = mysqli_fetch_assoc($fea_q)) 
                     {
-                        $feature_data .= "<span class='badge rounded-pill bg-light text-dark text-wrap me-1 mb-1'>
+                        $features_data .= "<span class='badge rounded-pill bg-light text-dark text-wrap me-1 mb-1'>
                             $fea_row[name]
                     </span>";
                     }
@@ -118,7 +118,7 @@
                     echo <<< features
                         <div class=" mb-3">
                         <h6 class="mb-1">Features</h6>
-                        $feature_data
+                        $features_data
                         </div>
                     features;
 

@@ -107,20 +107,20 @@
                 while ($roomdata = mysqli_fetch_assoc($room_res)) 
                 {
                     //get features of room
-                    $fea_q =mysqli_query($con,"SELECT f.NAME FROM `features` f
+                    $fea_q =mysqli_query($con,"SELECT f.name FROM `features` f
                     INNER JOIN `room_features` rfea ON f.id = rfea.features_id
                     WHERE rfea.room_id = '$room_data[id]'");
                     
-                    $feature_data = "";
+                    $features_data = "";
                     while($fea_row = mysqli_fetch_assoc($fea_q)) 
                     {
-                        $feature_data .= "<span class='badge rounded-pill bg-light text-dark text-wrap me-1 mb-1'>
+                        $features_data .= "<span class='badge rounded-pill bg-light text-dark text-wrap me-1 mb-1'>
                             $fea_row[name]
                     </span>";
 
                 }
                     //get facilities off room 
-                    $fac_q = mysqli_query($con,"SELECT f.NAME FROM `features` f
+                    $fac_q = mysqli_query($con,"SELECT f.name FROM `features` f
                     INNER JOIN `room_facilities` rfac ON f.id = rfac.facilities_id
                     WHERE rfac.room_id = '$room_data[id]'");
 
