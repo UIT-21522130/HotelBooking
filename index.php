@@ -104,7 +104,7 @@
         <div class="row">
         <?php 
                 $room_res = select("SELECT * FROM `rooms` WHERE `status`=? AND `removed`=? ORDER BY `id` DESC LIMIT 3 ",[1,0],'ii');
-                while ($roomdata = mysqli_fetch_assoc($room_res)) 
+                while ($room_data = mysqli_fetch_assoc($room_res)) 
                 {
                     //get features of room
                     $fea_q =mysqli_query($con,"SELECT f.name FROM `features` f
