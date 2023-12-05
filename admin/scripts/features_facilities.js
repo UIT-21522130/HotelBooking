@@ -78,7 +78,9 @@ facility_s_form.addEventListener('submit', function(e){
 function add_facility()
 {
     let data = new FormData();
+    data.append('icon',facility_s_form.elements['facility_icon'].files[0]);
     data.append('name',facility_s_form.elements['facility_name'].value);
+    
     data.append('desc',facility_s_form.elements['facility_desc'].value);
     data.append('add_facility','');
 
@@ -86,25 +88,30 @@ function add_facility()
     xhr.open("POST","ajax/features_facilities.php",true);
     
     xhr.onload= function(){
-        console.log(this.responseText);
         var myModal = document.getElementById('facility-s');
         var modal = bootstrap.Modal.getInstance(myModal);
         modal.hide();
 
-        if(this.responseText == 1){
-            alert('success','New Facility added!');
-            facility_s_form.elements['facility_name'].value = '';
-            facility_s_form.elements['facility_desc'].value = '';
-            get_facilities();
+    
+        if(this.responseText == 'inv_img'){
+            alert('error','Only SVG  are allowed!');
+        }
+        else if(this.responseText == 'inv_size'){
+            alert('error','Image size must be less than 1MB!');
+        }
+        else if(this.responseText == 'upd_failed'){
+            alert('error','Image upload failed. Server down!');
         }
         else{
-        alert('error','Server Down!');
+            alert('success','New Facilitiy added!');
+            
+            facility_s_form.reset();
+            // get_members();
         }
 
     }
     xhr.send(data);
 }
-
 function get_facilities(){
     let xhr= new XMLHttpRequest();
     xhr.open("POST","ajax/features_facilities.php",true);

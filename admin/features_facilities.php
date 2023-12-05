@@ -114,6 +114,7 @@
                                         <thead class="stickey-top">
                                             <tr class="bg-dark text-light">
                                                 <th scope="col">#</th>
+                                                <th scope="col">Icon</th>
                                                 <th scope="col">Name</th>
                                                  <th scope="col">Description</th>
                                                 <th scope="col">Action</th>
@@ -168,9 +169,13 @@
                             <label class="form-label fw-bold">Name</label>
                             <input type="text" name="facility_name"  class="form-control shadow-none" required>
                         </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Icon</label>
+                            <input type="file" name="facility_icon" accept=".svg"  class="form-control shadow-none" required>
+                        </div>
                          <div class="mb-3">
                             <label  class="form-label">Description</label>
-                            <textarea  name="facility_desc" class="form-control shadow-none rows='3' "></textarea>
+                            <textarea  name="facility_desc" class="form-control shadow-none" rows='3' ></textarea>
                         </div> 
                     </div>
                     <div class="modal-footer">
@@ -181,7 +186,7 @@
             </form>
         </div>
     </div>
-
+    
     <?php require('inc/scripts.php');   ?>
     <script src="scripts/features_facilities.js"></script>
 </body>

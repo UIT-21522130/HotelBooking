@@ -57,12 +57,35 @@
     //FACILITIES
     if(isset($_POST['add_facility'])){
         $frm_data = filteration($_POST);
-        $q = "INSERT INTO `facilities`(`name`,`description`) VALUES (?,?) ";
-        $values = [$frm_data['name'],$frm_data['desc']];
-        $res = insert($q,$values,'ss');
-        echo $res;
+        $img_r = uploadSVGImage($_FILES['icon'], FEATURES_FOLDER);
+        if($img_r == 'inv_img')
+        {
+            echo $img_r;
+        }
+        else if($img_r == 'inv_size')
+        {
+            echo $img_r;
+        }
+        else if($img_r == 'upd_failed')
+        {
+            echo $img_r;
+        }
+        else
+        {
+            $q = "INSERT INTO `facilities`(`icon`, `name`,`description`) VALUES (?,?,?) ";
+            $values = [$img_r, $frm_data['name'],$frm_data['desc']];
+            $res = insert($q,$values,'sss');
+            echo $res;
+        }
 
     }
+    // if (isset($_FILES['facility_icon'])) {
+    //     $image = $_FILES['facility_icon'];
+    //     $img_r = uploadSVGImage($image, FEATURES_FOLDER);
+    //     // Tiếp tục xử lý dữ liệu và lưu vào cơ sở dữ liệu
+    // } else {
+    //     echo 'facility_icon is not set'; // In case the input field name is incorrect
+    // }
 
     if(isset($_POST['get_facilities']))
     {
@@ -98,7 +121,7 @@
             $res = select($pre_q, $values, 'i');
             $img = mysqli_fetch_assoc($res);
 
-            if(deleteImage($img['icon'], FACILITIES_FOLDER)){
+            if(deleteImage($img['icon'], FEATURES_FOLDER)){
                 $q = "DELETE FROM `facilities` WHERE `id`=?";
                 $res = delete($q,$values,'i');
                 echo $res; 

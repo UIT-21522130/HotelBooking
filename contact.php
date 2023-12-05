@@ -47,10 +47,10 @@
 
                 
 
-                <h5 class="mt-4">Email</h5>
+                <!-- <h5 class="mt-4">Email</h5>
                 <a href="mailto: <?php echo $contact_r['email'] ?>" class="d-inline-block mb-2 text-decoration-none text-dark">
                     <i class="bi bi-envelope-fill"></i> <?php echo $contact_r['email'] ?>
-                </a>
+                </a> -->
                 <h5 class="mt-4">Follow us</h5>
                 <?php 
                 if ($contact_r['fb'] != '') {
