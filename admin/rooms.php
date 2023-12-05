@@ -283,7 +283,7 @@
                 </div>
             <div class="modal-body">
                 <div id="image-alert"></div>
-                 <div class="border-bottom boroom-imagesrder-3 pb-3 mb-3">
+                 <div class="border-bottom border-3 pb-3 mb-3">
                     <form id ="add_image_form">
                         <label class="form-label fw-bold">Add Image</label>
                         <input type="file" name="image" accept="[.jpg, .png, .webp, .jpeg]" class="form-control shadow-none mb-3" required>                    
