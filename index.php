@@ -196,7 +196,7 @@
         <div class="row justify-content-evenly px-lg-0 px-md-0 px-5">
             <?php 
                 $res= mysqli_query($con,"SELECT * FROM `facilities` ORDER BY `id` DESC LIMIT 5 ");
-                $path= FEATURES_IMG_PATH;
+                $path= FACILITIES_IMG_PATH;
                  while ($row = mysqli_fetch_assoc($res)) {
                      echo <<<data
                         <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
