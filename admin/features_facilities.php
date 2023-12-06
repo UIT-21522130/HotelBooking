@@ -116,7 +116,7 @@
                                                 <th scope="col">#</th>
                                                 <th scope="col">Icon</th>
                                                 <th scope="col">Name</th>
-                                                 <th scope="col">Description</th>
+                                                 <th scope="col" width="40%">Description</th>
                                                 <th scope="col">Action</th>
                                             </tr>
                                         </thead>
