@@ -79,13 +79,6 @@
         }
 
     }
-    // if (isset($_FILES['facility_icon'])) {
-    //     $image = $_FILES['facility_icon'];
-    //     $img_r = uploadSVGImage($image, FEATURES_FOLDER);
-    //     // Tiếp tục xử lý dữ liệu và lưu vào cơ sở dữ liệu
-    // } else {
-    //     echo 'facility_icon is not set'; // In case the input field name is incorrect
-    // }
 
     if(isset($_POST['get_facilities']))
     {
