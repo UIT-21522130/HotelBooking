@@ -3,54 +3,7 @@
     require('inc/db_config.php');
     adminLogin();
 
-    if(isset($_GET['seen']))
-    {
-        $frm_data = filteration($_GET);
-        if ($frm_data['seen'] == 'all') {
-            $q = "UPDATE `user_queries` SET `seen` = ?";
-            $values = [1];
-            if(update($q, $values, 'i')) {
-                alert('success', 'Marked all as read!');
-            }
-            else {
-                alert('error', 'Operation Failed');
-            }
-        }
-        else {
-            $q = "UPDATE `user_queries` SET `seen` = ? WHERE `sr_no` = ?";
-            $values = [1, $frm_data['seen']];
-            if(update($q, $values, 'ii')) {
-                alert('success', 'Marked as read!');
-            }
-            else {
-                alert('error', 'Operation Failed');
-            }
-        }
-    }
 
-    if(isset($_GET['del']))
-    {
-        $frm_data = filteration($_GET);
-        if ($frm_data['del'] == 'all') {
-            $q = "DELETE FROM `user_queries`";
-            if(mysqli_query($con, $q)) {
-                alert('success', 'All data deleted!');
-            }
-            else {
-                alert('error', 'Operation Failed');
-            }
-        }
-        else {
-            $q = "DELETE FROM `user_queries` WHERE `sr_no` = ?";
-            $values = [$frm_data['del']];
-            if(update($q, $values, 'i')) {
-                alert('success', 'Data deleted!');
-            }
-            else {
-                alert('error', 'Operation Failed');
-            }
-        }
-    }
 ?>
 
 <!DOCTYPE html>
@@ -82,7 +35,7 @@
 
                                <div class="table-responsive-md" style="height: 350px; overflow-y: scroll;">
                                     <table class="table table-hover border">
-                                        <thead class="stickey-top">
+                                        <thead>
                                             <tr class="bg-dark text-light">
                                                 <th scope="col">#</th>
                                                 <th scope="col">Name</th>
@@ -111,12 +64,12 @@
 
                                <div class="table-responsive-md" style="height: 350px; overflow-y: scroll;">
                                     <table class="table table-hover border">
-                                        <thead class="stickey-top">
+                                        <thead>
                                             <tr class="bg-dark text-light">
                                                 <th scope="col">#</th>
                                                 <th scope="col">Icon</th>
                                                 <th scope="col">Name</th>
-                                                 <th scope="col">Description</th>
+                                                 <th scope="col" width="40%">Description</th>
                                                 <th scope="col">Action</th>
                                             </tr>
                                         </thead>

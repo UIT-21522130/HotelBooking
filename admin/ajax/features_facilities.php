@@ -57,7 +57,7 @@
     //FACILITIES
     if(isset($_POST['add_facility'])){
         $frm_data = filteration($_POST);
-        $img_r = uploadSVGImage($_FILES['icon'], FEATURES_FOLDER);
+        $img_r = uploadSVGImage($_FILES['icon'], FACILITIES_FOLDER);
         if($img_r == 'inv_img')
         {
             echo $img_r;
@@ -79,22 +79,17 @@
         }
 
     }
-    // if (isset($_FILES['facility_icon'])) {
-    //     $image = $_FILES['facility_icon'];
-    //     $img_r = uploadSVGImage($image, FEATURES_FOLDER);
-    //     // Tiếp tục xử lý dữ liệu và lưu vào cơ sở dữ liệu
-    // } else {
-    //     echo 'facility_icon is not set'; // In case the input field name is incorrect
-    // }
 
     if(isset($_POST['get_facilities']))
     {
         $res = selectAll('facilities');
         $i =1;
+        $path = FACILITIES_IMG_PATH;
         while($row = mysqli_fetch_assoc($res)){
             echo <<<data
-                <tr>
+                <tr class = "align-middle">
                     <td>$i</td>
+                    <td><img src="$path$row[icon]" width="100px"></td>
                     <td>$row[name]</td>
                     <td>$row[description]</td>
                   
@@ -121,7 +116,7 @@
             $res = select($pre_q, $values, 'i');
             $img = mysqli_fetch_assoc($res);
 
-            if(deleteImage($img['icon'], FEATURES_FOLDER)){
+            if(deleteImage($img['icon'], FACILITIES_FOLDER)){
                 $q = "DELETE FROM `facilities` WHERE `id`=?";
                 $res = delete($q,$values,'i');
                 echo $res; 

@@ -103,10 +103,9 @@ function add_facility()
             alert('error','Image upload failed. Server down!');
         }
         else{
-            alert('success','New Facilitiy added!');
-            
+            alert('success','New Facilitiy added!');            
             facility_s_form.reset();
-            // get_members();
+            get_facilities();
         }
 
     }
@@ -135,7 +134,7 @@ function rem_facility(val){
             get_facilities();
         }
         else if(this.responseText == 'room_added') {
-            alert('success','Feature is added in room!');
+            alert('success','Facility is added in room!');
         }
         else{
             alert('error','Server Down!');

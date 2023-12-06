@@ -40,6 +40,8 @@
                         <input name = "admin_pass" required type="password" class="form-control shadow-none text-center" placeholder="Password">
                     </div>
                     <button name="login" type="submit" class="btn text-white bg-primary shadow-none" >Login</button>
+                    <!-- <input name="login" type="submit" value = "Login" class="btn text-white bg-primary shadow-none" > -->
+
             </div>
         </form>
     </div>

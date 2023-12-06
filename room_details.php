@@ -53,7 +53,7 @@
                        
                         while( $img_res = mysqli_fetch_assoc($img_q)) {
                             echo"<div class='carousel-item $active_class'>
-                            <img src='".ROOMS_IMG_PATH.$img_res['image']."' class='d-block w-100-rounded' >
+                            <img src='".ROOMS_IMG_PATH.$img_res['image']."' class='d-block w-100-rounded' style ='max-width: 100%; height:auto;'>
                             </div>";
                             $active_class='';
                         }
@@ -64,15 +64,6 @@
                         </div>";
                     }
                 ?>
-                <div class="carousel-item active">
-                <img src="..." class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
-                </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#roomCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
