@@ -103,10 +103,9 @@ function add_facility()
             alert('error','Image upload failed. Server down!');
         }
         else{
-            alert('success','New Facilitiy added!');
-            
+            alert('success','New Facilitiy added!');            
             facility_s_form.reset();
-            // get_members();
+            get_facilities();
         }
 
     }

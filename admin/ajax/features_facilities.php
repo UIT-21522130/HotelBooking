@@ -84,10 +84,12 @@
     {
         $res = selectAll('facilities');
         $i =1;
+        $path = FEATURES_IMG_PATH;
         while($row = mysqli_fetch_assoc($res)){
             echo <<<data
-                <tr>
+                <tr class = "align-middle">
                     <td>$i</td>
+                    <td><img src="$path$row[icon]" width="100px"></td>
                     <td>$row[name]</td>
                     <td>$row[description]</td>
                   
