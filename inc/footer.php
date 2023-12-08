@@ -60,7 +60,7 @@
             else{
                 document.getElementById(position).appendChild(element);
             }
-            setTimeout(remAlert,2000);
+            setTimeout(remAlert,3000);
         }
 
         //setting time cho alert
@@ -98,8 +98,8 @@ function setActive(){
         
         
         var myModal = document.getElementById('registerModal');
-                var modal = bootstrap.Modal.getInstance(myModal);
-                modal.hide();
+        var modal = bootstrap.Modal.getInstance(myModal);
+        modal.hide();
 
         let xhr = new XMLHttpRequest();
         xhr.open("POST","ajax/login_register.php",true)
@@ -108,16 +108,16 @@ function setActive(){
                 alert('error',"Password mismatch");
             }
             else if (this.responseText == 'email_already') {
-                alert('error',"Email is already register!");
+                alert('error',"Email is already registered!");
             }
             else if (this.responseText == 'phone_already') {
-                alert('error',"Phone is already register!");
+                alert('error',"Phone is already registered!");
             }
             else if (this.responseText == 'inv_img') {
                 alert('error',"Only JPG,WEBP, PNG image are allowed!");
             }
             else if (this.responseText == 'upd_failed') {
-                alert('error',"Image upload fail!");
+                alert('error',"Image upload failed!");
             }
             else if (this.responseText == 'ins_failed') {
                 alert('error',"Registration  failed! server down ");
