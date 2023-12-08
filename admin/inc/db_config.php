@@ -11,7 +11,7 @@ $db = 'hotel_booking';
 
 
 if (!$con) {
-    die("cannot connect DB" . mysqli_connect_error());
+    die("cannot connect DB" . mysqli_connect_error()); 
 }
 
 /* Lọc data */

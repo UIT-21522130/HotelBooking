@@ -7,17 +7,17 @@
         <div class="alert ${bs_class}  alert-dismissible fade show" role="alert"> 
         <strong class="me-3">${msg}</strong>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> 
-    </div>`;
+        </div>`;
 
-    if(position == 'body')
-    {
-        document.body.append(element);
-        element.classList.add('custom-alert');
-    }
-    else{
-        document.getElementById(position).appendChild(element);
-    }
-    setTimeout(remAlert,2000);
+        if(position == 'body')
+        {
+            document.body.append(element);
+            element.classList.add('custom-alert');
+        }
+        else{
+            document.getElementById(position).appendChild(element);
+        }
+        setTimeout(remAlert,2000);
     }
 
     //setting time cho alert
