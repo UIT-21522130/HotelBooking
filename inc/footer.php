@@ -104,8 +104,8 @@ function setActive(){
         let xhr = new XMLHttpRequest();
         xhr.open("POST","ajax/login_register.php",true)
         xhr.onload = function(){
-            if(this.responseText == 'pass_missmatch') {
-                alert('error',"Password missmatch");
+            if(this.responseText == 'pass_mismatch') {
+                alert('error',"Password mismatch");
             }
             else if (this.responseText == 'email_already') {
                 alert('error',"Email is already register!");

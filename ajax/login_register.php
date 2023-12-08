@@ -8,7 +8,7 @@
 
         //match password and confirm password
         if($data['pass'] != $data['cpass']) {
-                echo 'pass_missmatch';
+                echo 'pass_mismatch';
                 exit;
         }
         //check user exist or not
