@@ -102,7 +102,7 @@ function setActive(){
         modal.hide();
 
         let xhr = new XMLHttpRequest();
-        xhr.open("POST","ajax/login_register.php",true)
+        xhr.open("POST","ajax/login_register.php",true);
         xhr.onload = function(){
             if(this.responseText == 'pass_mismatch') {
                 alert('error',"Password mismatch");

@@ -25,6 +25,7 @@
             echo 'inv_img';
             exit;
         }
+        //
         else if ($img == 'upd_failed') {
             echo 'upd_failed';
             exit;

@@ -1,6 +1,8 @@
 <?php
     //Kiều
     //   define('SITE_URL','http://localhost/Hotelbooking/');
+    //   define('SITE_URL','http://127.0.0.1/Hotelbooking/');
+
     //** Hương
     define('SITE_URL', 'http://127.0.0.1/hbwebsite/Hotelbooking-dev/hotelbooking/');
     //Minh
@@ -19,7 +21,7 @@
     // Kiều
     //  define('UPLOAD_IMAGE_PATH','/Applications/XAMPP/xamppfiles/htdocs/Hotelbooking/images/');
     //Minh
-    // define('UPLOAD_IMAGE_PATH','/xampp/htdocs/Hotelbooking/images');
+    // define('UPLOAD_IMAGE_PATH','/xampp/htdocs/Hotelbooking/images/');
 
     define('ABOUT_FOLDER','about/');
     define('CAROUSEL_FOLDER','carousel/'); 
