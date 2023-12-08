@@ -1,8 +1,8 @@
 <?php
     //Kiều
-    //  define('SITE_URL','http://localhost/Hotelbooking/');
+      define('SITE_URL','http://localhost/Hotelbooking/');
     //** Hương
-    define('SITE_URL', 'http://127.0.0.1/hbwebsite/Hotelbooking-dev/hotelbooking/');
+    //define('SITE_URL', 'http://127.0.0.1/hbwebsite/Hotelbooking-dev/hotelbooking/');
     //Minh
     //define('SITE_URL',getServerURL().'/Hotelbooking/');
 
@@ -13,9 +13,9 @@
 
 
     // ** Hương
-    define('UPLOAD_IMAGE_PATH',$_SERVER['DOCUMENT_ROOT'].'/hbwebsite/Hotelbooking-dev/hotelbooking/images/');
+    //define('UPLOAD_IMAGE_PATH',$_SERVER['DOCUMENT_ROOT'].'/hbwebsite/Hotelbooking-dev/hotelbooking/images/');
     // Kiều
-    // define('UPLOAD_IMAGE_PATH','/Applications/XAMPP/xamppfiles/htdocs/Hotelbooking/images/');
+     define('UPLOAD_IMAGE_PATH','/Applications/XAMPP/xamppfiles/htdocs/Hotelbooking/images/');
     //Minh
     // define('UPLOAD_IMAGE_PATH','/xampp/htdocs/Hotelbooking/images');
 
@@ -23,6 +23,8 @@
     define('CAROUSEL_FOLDER','carousel/'); 
     define('FACILITIES_FOLDER','facilities/'); 
     define('ROOMS_FOLDER','rooms/'); 
+    define('USERS_FOLDER','users/'); 
+
     
     
     function getServerURL()
@@ -123,6 +125,35 @@
         }
     }
 
+    function uploadUserImage($image){
+        $valid_mime = ['image/jpeg', 'image/png', 'image/webp'];
+        $img_mime = $image['type'];
+
+        if(!in_array($img_mime,$valid_mime)){
+            return 'inv_img'; //invalid image mime or format
+        }
+        else{
+            $ext = pathinfo($image['name'],PATHINFO_EXTENSION);
+            $rname = 'IMG_'.random_int(11111,99999).".jpeg";
+
+            $img_path = UPLOAD_IMAGE_PATH.USERS_FOLDER.$rname;
+            if($ext == 'png' | $ext == 'PNG'){
+               $img = imagecreatefrompng($image['tmp_name']);
+            }
+            else if ($ext == 'webp' | $ext == 'WEBP') {
+                $img = imagecreatefromwebp($image['tmp_name']);
+            }
+             else{
+                $img = imagecreatefromjpeg($image['tmp_name']);
+            }
+            if(imagejpeg($img,$img_path,75)){
+                return $rname;
+            }
+            else{
+               return 'upd_failed';
+            }
+        }
+    }
 
 
 ?>

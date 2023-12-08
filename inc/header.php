@@ -81,7 +81,7 @@
 <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form id="passwordForm" action="">
+            <form id="register-form">
                 <div class="modal-header">
                     <h5 class="modal-title d-flex align-items-center">
                         <i class="bi bi-person-lines-fill fs-3 me-2"></i>
@@ -95,12 +95,10 @@
                 </span>
                 <div class="container-fluid">
                     <div class="row">
-                        <div data-ol-form-messages="" role="alert"></div>
-                        <div class="alert alert-danger" hidden="hidden" data-ol-custom-form-message="password-contains-email" role="alert" aria-live="assertive">Password cannot contain parts of email address.
-                            Please use a different password.
-                        </div>
-                        <div class="alert alert-danger" hidden="hidden" data-ol-custom-form-message="password-too-similar" role="alert" aria-live="assertive">Password is too similar to parts of email address.
-                            Please use a different password.
+                      
+                        <div class="form-group mb-3">
+                            <label class="sr-only" >Name</label>
+                            <input type="text" class="form-control shadow-none" name="name" placeholder="Name" required>                                
                         </div>
                         <div class="form-group mb-3">
                             <label class="sr-only" for="email">Please enter your email address</label>
@@ -109,52 +107,38 @@
                         </div>                            
                         <div class="form-group mb-3">
                             <label class="sr-only" for="number">Phone Number</label>
-                            <input id="number" type="number" class="form-control shadow-none" name='phonenumber' placeholder="Phone Number">                                
+                            <input id="number"  class="form-control shadow-none" name='phonenum' placeholder="Phone Number">                                
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="sr-only" >Address</label>
+                            <textarea name="address" type="date" class="form-control shadow-none" rows="1" required></textarea>                             
                         </div>
                         <div class="form-group mb-3">
                             <label class="sr-only" >Date of birth</label>
-                            <input type="date" class="form-control shadow-none">                                
+                            <input name="dob" type="date" class="form-control shadow-none">                                
                         </div>
                         <div class="form-group mb-3">
                             <label class="form-label">Picture</label>
-                            <input type="file" class="form-control shadow-none">                                
+                            <input name="profile" accept=".jpg, .jpeg, .png, .webp" type="file" class="form-control shadow-none">                                
                         </div>
                         <div class="form-group mb-3">
-                            <label class="sr-only" for="passwordField">Please enter your password</label>
-                            <input class="form-control" id="passwordField" type="password" name="password" placeholder="Password" required="" autocomplete="new-password" minlength="8">
-                            <div class="small text-danger mt-2" hidden=""></div>
+                            <label class="form-label">Password</label>
+                            <input name="pass"  type="password" class="form-control shadow-none" >      
                         </div>
                         <div class="form-group mb-3">
-                            <label class="sr-only" for="confirmPasswordField">Confirm Password</label>
-                            <input class="form-control" id="confirmPasswordField" type="password" name="password" placeholder="Confirm Password" required="" autocomplete="new-password" minlength="8">
-                            <div class="small text-danger mt-2" id="confirmPasswordError" hidden>Passwords do not match.</div>
+                            <label class="form-label"> Confirm Password</label>
+                            <input name="cpass"  type="password" class="form-control shadow-none" >          
                         </div>     
                     
                     </div>
                 </div>
                 <div class="text-center my-1">
-                    <button class="btn btn-dark shadow-none" type="submit" event-tracking="register" event-tracking-ga="register" event-tracking-mb="true" event-tracking-action="clicked" event-tracking-trigger="click" event-tracking-label="email" event-segmentation="{&quot;split-test-design-system-updates&quot;:&quot;default&quot;}" data-ol-disabled-inflight="">
-                        <span data-ol-inflight="idle">Register using your email</span>
-                        <span hidden="" data-ol-inflight="pending">Registering…</span>
-                    </button>
-                </div>                        
-                </div>                    
+                    <button type="submit" class ="btn btn-dark shadow-none">REGISTER</button>
+                
+                </div>               
+                </div>                           
             </form>
-            <script>
-                const passwordField = document.getElementById('passwordField');
-                const confirmPasswordField = document.getElementById('confirmPasswordField');
-                const confirmPasswordError = document.getElementById('confirmPasswordError');
-                const form = document.getElementById('passwordForm');
-
-                form.addEventListener('submit', function (e) {
-                    if (passwordField.value !== confirmPasswordField.value) {
-                        e.preventDefault(); // Prevent form submission
-                        confirmPasswordError.removeAttribute('hidden');
-                    } else {
-                        confirmPasswordError.setAttribute('hidden', 'true');
-                    }
-                });
-            </script>
+         
         </div>
     </div>
 </div>
