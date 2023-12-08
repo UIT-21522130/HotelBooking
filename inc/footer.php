@@ -123,7 +123,7 @@ function setActive(){
                 alert('error',"Registration  failed! server down ");
             }
             else {
-                alert('succes',"Registration successful!");
+                alert('success',"Registration successful!");
                 register_form.reset();
             }
         }
