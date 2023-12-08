@@ -1,8 +1,8 @@
 <?php
     //Kiều
-      define('SITE_URL','http://localhost/Hotelbooking/');
+    //   define('SITE_URL','http://localhost/Hotelbooking/');
     //** Hương
-    //define('SITE_URL', 'http://127.0.0.1/hbwebsite/Hotelbooking-dev/hotelbooking/');
+    define('SITE_URL', 'http://127.0.0.1/hbwebsite/Hotelbooking-dev/hotelbooking/');
     //Minh
     //define('SITE_URL',getServerURL().'/Hotelbooking/');
 
@@ -10,12 +10,14 @@
     define('CAROUSEL_IMG_PATH',SITE_URL.'images/carousel/');
     define('FACILITIES_IMG_PATH',SITE_URL.'images/facilities/');
     define('ROOMS_IMG_PATH',SITE_URL.'images/rooms/');
+    define('USERS_IMG_PATH',SITE_URL.'images/users/');
+
 
 
     // ** Hương
-    //define('UPLOAD_IMAGE_PATH',$_SERVER['DOCUMENT_ROOT'].'/hbwebsite/Hotelbooking-dev/hotelbooking/images/');
+    define('UPLOAD_IMAGE_PATH',$_SERVER['DOCUMENT_ROOT'].'/hbwebsite/Hotelbooking-dev/hotelbooking/images/');
     // Kiều
-     define('UPLOAD_IMAGE_PATH','/Applications/XAMPP/xamppfiles/htdocs/Hotelbooking/images/');
+    //  define('UPLOAD_IMAGE_PATH','/Applications/XAMPP/xamppfiles/htdocs/Hotelbooking/images/');
     //Minh
     // define('UPLOAD_IMAGE_PATH','/xampp/htdocs/Hotelbooking/images');
 
