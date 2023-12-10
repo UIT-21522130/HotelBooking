@@ -186,14 +186,9 @@ function setActive(){
         let xhr = new XMLHttpRequest();
         xhr.open("POST","ajax/login_register.php",true);
 
-        xhr.onpro
-
         xhr.onload = function(){
             if(this.responseText == 'inv_email') {
                 alert('error',"Invalid Email or Mobile Number!");
-            }
-            else if (this.responseText == 'not_verified') {
-                alert('error',"Email is not verified! Please contact Admin");
             }
             else if (this.responseText == 'upd_failed') {
                 alert('error',"Password reset failed! Server Down!");
