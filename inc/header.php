@@ -28,7 +28,9 @@
             
         </ul>
         <div class="d-flex">
-            <?php                
+            <?php     
+                // session_destroy();
+                // print_r($_SESSION);           
                 if(isset($_SESSION['login']) && $_SESSION['login'] == true)
                 {
                     $path = USERS_IMG_PATH;
