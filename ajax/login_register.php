@@ -1,6 +1,9 @@
 <?php 
    require('../admin/inc/db_config.php');
    require('../admin/inc/essentials.php');
+
+   date_default_timezone_set("Asia/Ho_Chi_Minh");
+
   
    if(isset($_POST['register']))
    {
@@ -48,13 +51,12 @@
    {
         $data = filteration($_POST);
 
-        $u_exist =select("SELECT * FROM `user_cred` WHERE `email`= ? OR `phonenum` = ? LIMIT 1",
+        $u_exist = select("SELECT * FROM `user_cred` WHERE `email`= ? OR `phonenum`= ? LIMIT 1",
         [$data['email_mob'],$data['email_mob']],"ss");
 
         if(mysqli_num_rows($u_exist)==0)
         {
             echo 'inv_email_mob';
-            exit;
         }
         else
         {
@@ -74,15 +76,61 @@
                     session_start();
                     $_SESSION['login'] = true;
                     $_SESSION['uID'] = $u_fetch['id'];
-                    $_SESSION['uName'] = $u_fetch['uname'];
-                    $_SESSION['uPic'] = $u_fetch['picture'];
+                    $_SESSION['uName'] = $u_fetch['name'];
+                    $_SESSION['uPic'] = $u_fetch['profile'];
                     $_SESSION['uPhone'] = $u_fetch['phonenum'];
                     echo 1;
-
                 }
             }
         }
    }
 
+   if(isset($_POST['forgot_pass']))
+   {
+        $data = filteration($_POST);
+
+        $u_exist = select("SELECT * FROM `user_cred` WHERE `email`= ?  LIMIT 1", [$data['email']], "s");
+
+        if(mysqli_num_rows($u_exist)==0)
+        {
+            echo 'inv_email';
+        }
+        else
+        {
+            $u_fetch = mysqli_fetch_assoc($u_exist);
+            if($u_fetch['is_verified']==0)
+            {
+                echo 'not_verified';
+            }
+            else
+            {
+                //Đoạn này ảnh hưởng phần send mail -> xem lại 47:19
+                echo 'upd_failed';
+            }
+        }
+   }
+
+
+   if(isset($_POST['recover_user']))
+   {
+    $data = filteration($_POST);
+
+    $enc_pass = password_hash($data['pass'],PASSWORD_BCRYPT);
+
+    //Đoạn này lấy token và t_expire => xem lại 1:10:30
+    $query = "UPDATE `user_cred` SET `password`=? WHERE `email`=? ";
+
+    $values = [$enc_pass,null,null,$data['email']];
+
+    if(update($query,$value,'ssss'))
+    {
+        echo 1;
+    }
+    else
+    {
+        echo'failed';
+    }
+
+   }
 
 ?>

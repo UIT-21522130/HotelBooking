@@ -298,6 +298,7 @@
    
 
     <h2 id="reachus" class ="mt-5 pt-4 mb-4 text-center fw-bold h-font">REACH US</h2>
+    
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-8 p-4 mb-lg-0 mb-3 bg-white rounded">
@@ -353,9 +354,68 @@
             </div>
         </div>
     </div>
+
+    <!-- Password reset modal and code-->
+    <div class="modal fade" id="recoveryModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="recovery-form">
+                <div class="modal-header">
+                    <h5 class="modal-title d-flex align-items-center    ">
+                        <i class="bi bi-shield-lock fs-3 me-2"></i> Set up new Password 
+                    </h5>
+                </div>
+                <div class="modal-body">
+                <div class="mb-4">
+                    <label class = "form-label">New Password</label>
+                    <input type="password" name="pass" required class="form-control shadow-none">
+                    <input type="hidden" name="email">
+                </div>
+                    <div class="mb-2 text-end">
+                        <button type="button" class="btn shadow-none me-2" data-bs-dismiss="modal">CANCEL</button>
+                        <button type="submit"class="btn btn-dark shadow-none">SUBMIT</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
     <!-- END -->
     <?php require('inc/footer.php');?>
+                    
+    <?php 
+    
+        if(isset($_GET['account_recovery']))
+        {
+            $data = filteration($_GET);
 
+            $t_date = date("Y-m-d");
+            // Xem lại đoạn này do có lấy token và t_expire 58:00
+            $query = select("SELECT * FROM `user_cred` WHERE `email` = ? LIMIT 1",
+            [$data['email'],'s']);
+
+            if(mysqli_num_rows($query)==1)
+            {
+                echo<<<showModal
+                    <script>
+                        var muModal = document.getElementById('recoveryModal');
+
+                        myModal.querySelector("input[name='email']").value ='$data[email]';
+
+                        var modal = boostrap.Modal.getOrCreateInstance(myModal);
+                        modal.show();
+                    </script>
+                showModal;
+            }
+            else
+            {
+                alert("error","Invalid Link!");
+            }
+        }
+
+    ?>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
@@ -401,6 +461,42 @@
                 },
             }
           });
+
+        //recover account
+        let recovery_form = document.getElementById('recovery-form');
+
+        recovery_form.addEventListener('submit', (e)=> {
+            e.preventDefault();
+
+            let data = new FormData();
+
+            data.append('email',recovery_form.elements['email'].value);
+            data.append('pass',recovery_form.elements['pass'].value);
+            data.append('recover_user','');
+            
+            
+            var myModal = document.getElementById('recoveryModal');
+            var modal = bootstrap.Modal.getInstance(myModal);
+            modal.hide();
+
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST","ajax/login_register.php",true);
+
+            xhr.onpro
+
+            xhr.onload = function(){
+                if(this.responseText == 'failed') {
+                    alert('error',"Account reset failed!");
+                }
+                else {
+                    alert('success',"Account Reset Successful!");
+                    recovery_form.reset();
+                }
+
+            }
+            xhr.send(data);
+        });
+
     </script>
 </body> 
 </html>

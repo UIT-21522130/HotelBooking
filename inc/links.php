@@ -3,6 +3,10 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 <link rel="stylesheet" href="css/common.css">
 <?php
+
+    session_start();
+    date_default_timezone_set("Asia/Ho_Chi_Minh");
+
     require('admin/inc/db_config.php');
     require('admin/inc/essentials.php');
     

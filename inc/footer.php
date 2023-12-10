@@ -167,6 +167,44 @@ function setActive(){
         xhr.send(data);
     });
 
+    let forgot_form = document.getElementById('forgot-form');
+
+    forgot_form.addEventListener('submit', (e)=> {
+        e.preventDefault();
+
+        let data = new FormData();
+
+        data.append('email',forgot_form.elements['email'].value);
+        data.append('forgot_pass','');
+        
+        
+        var myModal = document.getElementById('forgotModal');
+        var modal = bootstrap.Modal.getInstance(myModal);
+        modal.hide();
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST","ajax/login_register.php",true);
+
+        xhr.onpro
+
+        xhr.onload = function(){
+            if(this.responseText == 'inv_email') {
+                alert('error',"Invalid Email or Mobile Number!");
+            }
+            else if (this.responseText == 'not_verified') {
+                alert('error',"Email is not verified! Please contact Admin");
+            }
+            else if (this.responseText == 'upd_failed') {
+                alert('error',"Password reset failed! Server Down!");
+            }
+            else {
+                alert('success',"Reset link sent to email!");
+                forgot_form.reset();
+            }
+
+        }
+        xhr.send(data);
+    });
 
     setActive();
 </script>
