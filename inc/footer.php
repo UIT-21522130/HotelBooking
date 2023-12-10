@@ -106,13 +106,13 @@ function setActive(){
         let xhr = new XMLHttpRequest();
         xhr.open("POST","ajax/login_register.php",true);
         xhr.onload = function(){
-            if(this.responseText == 'pass_mismatch') {
+            if(this.responseText == 2) {
                 alert('error',"Password mismatch");
             }
-            else if (this.responseText == 'email_already') {
+            else if (this.responseText == 3) {
                 alert('error',"Email is already registered!");
             }
-            else if (this.responseText == 'phone_already') {
+            else if (this.responseText == 4) {
                 alert('error',"Phone is already registered!");
             }
             else if (this.responseText == 'inv_img') {
@@ -124,7 +124,7 @@ function setActive(){
             else if (this.responseText == 'ins_failed') {
                 alert('error',"Registration  failed! server down ");
             }
-            else {
+            else if (this.responseText == 1) {
                 alert('success',"Registration successful!");
                 register_form.reset();
             }
@@ -150,22 +150,23 @@ function setActive(){
 
         let xhr = new XMLHttpRequest();
         xhr.open("POST","ajax/login_register.php",true);
-        xhr.onload = function(){
-            if(this.responseText == 'inv_email_mob') {
-                alert('error',"Invalid Email or Mobile Number!");
-            }
-            else if (this.responseText == 'not_verified') {
-                alert('error',"Email is not verified!");
-            }
-            else if (this.responseText == 'invalid_pass') {
-                alert('error',"Incorrect Password!");
-            }
-            else {
-             window.location = window.location.pathname;
-            }
-        }
-        xhr.send(data);
-    });
+        xhr.onload = function() {
+            if (this.responseText === 'inv_email_mob') 
+            // if (this.responseText === 1) 
+            {
+                alert('Invalid Email or Mobile Number!');
+            } 
+            else if (this.responseText === 'invalid_pass') 
+            // else if (this.responseText === 2) 
+            {
+                alert('Incorrect Password!');
+            } 
+            else if (this.responseText === 'success') {
+                window.location = window.location.pathname;
+            } 
+        };
+            xhr.send(data);
+        });
 
     let forgot_form = document.getElementById('forgot-form');
 

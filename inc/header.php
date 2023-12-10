@@ -28,7 +28,7 @@
             
         </ul>
         <div class="d-flex">
-            <?php
+            <?php                
                 if(isset($_SESSION['login']) && $_SESSION['login'] == true)
                 {
                     $path = USERS_IMG_PATH;
@@ -58,12 +58,7 @@
                     data;
                 }
             ?>
-            <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
-            Login
-            </button>
-            <button type="button" class="btn btn-outline-dark shadow-none" data-bs-toggle="modal" data-bs-target="#registerModal">
-            Register
-            </button>
+            
         </div>
         </div>
     </div>
