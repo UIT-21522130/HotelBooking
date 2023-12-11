@@ -2,7 +2,6 @@
     require('inc/essentials.php');
     require('inc/db_config.php');
     adminLogin();
-
     if(isset($_GET['seen']))
     {
         $frm_data = filteration($_GET);

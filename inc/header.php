@@ -28,9 +28,7 @@
             
         </ul>
         <div class="d-flex">
-            <?php     
-                // session_destroy();
-                // print_r($_SESSION);           
+            <?php                                
                 if(isset($_SESSION['login']) && $_SESSION['login'] == true)
                 {
                     $path = USERS_IMG_PATH;
@@ -60,7 +58,7 @@
                     data;
                 }
             ?>
-            
+           
         </div>
         </div>
     </div>
@@ -85,11 +83,8 @@
                         <label class = "form-label">Password</label>
                         <input type="password" name="pass" required class="form-control shadow-none">
                     </div>
-                    <div class="d-flex align-items-center justify-content-between mb-2">
-                        <button type="submit"class="btn btn-dark shadow-none">Login with your email</button>
-                        <button type="button" class="btn text-secondary text-decoration-none shadow-none p-0" data-bs-toggle="modal" data-bs-target="#forgotModal" data-bs-dismiss="modal">
-                            Forgot your password?
-                        </button>
+                    <div class="d-flex align-items-center justify-content-center mb-2">
+                        <button type="submit" class="btn btn-dark shadow-none">Login with your email</button>
                     </div>
                 </div>
             </form>

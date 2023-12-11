@@ -106,6 +106,16 @@
                         $thumb_res = mysqli_fetch_assoc($thumb_q);
                         $room_thumb = ROOMS_IMG_PATH.$thumb_res['image'];
                     }
+                    $book_btn = "";
+                    if(!$settings_r['shutdown'])
+                    {
+                        $login = 0;
+                        if(isset($_SESSION['login']) && $_SESSION['login'] == true)
+                        {
+                            $login = 1;
+                        }
+                        $book_btn = "<button onclick='checkLoginToBook($login, $room_data[id])' class='btn btn-sm w-100 text-white custom-bg shadow-none mb-2'>Book Now</button>";
+                    }
                     //print room card
                     echo <<< data
                         <div class="card mb-4 border-0 shadow">
@@ -135,7 +145,7 @@
                                 </div>
                                 <div class="col-md-2 mt-lg-0 mt-md-0 mt-4 text-center">
                                     <h6 class="mb-4">$room_data[price] VND per night</h6>
-                                    <a href="#" class="btn btn-sm w-100 text-white custom-bg shadow-none mb-2">Book Now</a>
+                                    $book_btn
                                     <a href="room_details.php?id=$room_data[id]" class="btn btn-sm w-100 btn-outline-dark shadow-none">More details</a>
                                 </div>
                             </div>

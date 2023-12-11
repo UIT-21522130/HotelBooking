@@ -151,19 +151,16 @@ function setActive(){
         let xhr = new XMLHttpRequest();
         xhr.open("POST","ajax/login_register.php",true);
         xhr.onload = function() {
-            if (this.responseText === 'inv_email_mob') 
-            // if (this.responseText === 1) 
-            {
-                alert('Invalid Email or Mobile Number!');
-            } 
-            else if (this.responseText === 'invalid_pass') 
-            // else if (this.responseText === 2) 
-            {
-                alert('Incorrect Password!');
-            } 
-            else if (this.responseText === 'success') {
+            if (this.responseText.trim() === 'inv_email_mob') {
+            alert('Invalid Email or Mobile Number!');
+            } else if (this.responseText.trim() === 'invalid_pass') {
+            alert('Incorrect Password!');
+            } else if (this.responseText.trim() === 'success') {
+            alert('success','Login success!');
+            setTimeout(function() {
                 window.location = window.location.pathname;
-            } 
+            }, 2000);
+                        }
         };
             xhr.send(data);
         });
@@ -201,6 +198,18 @@ function setActive(){
         }
         xhr.send(data);
     });
+    function checkLoginToBook(status, room_id)
+    {
+        if(status)
+        {
+            window.location.href = 'confirm_booking.php?id='+room_id;
+        }
+        else{
+            alert('error', "Please login to book room");
+        }
+
+    }
+
 
     setActive();
 </script>

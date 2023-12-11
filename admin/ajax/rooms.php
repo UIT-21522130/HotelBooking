@@ -156,7 +156,7 @@
             $flag = 1;
         }
 
-        $del_features = delete('DELETE FROM `room_features` WHERE `room_id`=?', [$frm_data['room_id']],'i');
+        $del_features = delete("DELETE FROM `room_features` WHERE `room_id`=?", [$frm_data['room_id']],'i');
 
         $del_facilities = delete('DELETE FROM `room_facilities` WHERE `room_id`=?', [$frm_data['room_id']],'i');
 
@@ -169,7 +169,7 @@
         {
             foreach($facilities as $f)
             {
-                mysqli_stmt_bind_param($stmt, 'ii', $frm_data['$room_id'], $f);
+                mysqli_stmt_bind_param($stmt, 'ii', $frm_data['room_id'], $f);
                 mysqli_stmt_execute($stmt);
             }
             $flag = 1;
@@ -186,7 +186,7 @@
         {
             foreach($features as $f)
             {
-                mysqli_stmt_bind_param($stmt, 'ii', $frm_data['$room_id'], $f);
+                mysqli_stmt_bind_param($stmt, 'ii', $frm_data['room_id'], $f);
                 mysqli_stmt_execute($stmt);
             }
             mysqli_stmt_close($stmt);
