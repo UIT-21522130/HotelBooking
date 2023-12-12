@@ -151,17 +151,28 @@ function setActive(){
         let xhr = new XMLHttpRequest();
         xhr.open("POST","ajax/login_register.php",true);
         xhr.onload = function() {
-            if (this.responseText.trim() === 'inv_email_mob') {
-            alert('Invalid Email or Mobile Number!');
-            } else if (this.responseText.trim() === 'invalid_pass') {
-            alert('Incorrect Password!');
-            } else if (this.responseText.trim() === 'success') {
-            alert('success','Login success!');
-            setTimeout(function() {
+            if (this.responseText.trim() === 'inv_email_mob') 
+            {
+                alert('Invalid Email or Mobile Number!');
+            } 
+            else if (this.responseText.trim() === 'invalid_pass') 
+            {
+                alert('Incorrect Password!');
+            } 
+            else if (this.responseText.trim() === 'success') 
+            {
+                let fileurl = window.location.href.split('/').pop().split('?').shift();
+                if(fileurl == 'room_details.php')
+                {
+                    window.location = window.location.href;
+                }
+                else
+                {
+                alert('success','Login success!');
                 window.location = window.location.pathname;
-            }, 2000);
-                        }
-        };
+                }
+            }
+        }
             xhr.send(data);
         });
 
@@ -198,6 +209,7 @@ function setActive(){
         }
         xhr.send(data);
     });
+
     function checkLoginToBook(status, room_id)
     {
         if(status)
