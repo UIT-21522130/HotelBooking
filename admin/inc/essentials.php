@@ -20,6 +20,7 @@
     // define('UPLOAD_IMAGE_PATH',$_SERVER['DOCUMENT_ROOT'].'/hbwebsite/Hotelbooking-dev/hotelbooking/images/');
     // Kiều
      define('UPLOAD_IMAGE_PATH','/Applications/XAMPP/xamppfiles/htdocs/hotel_booking/images');
+     //chmod -R 777 
     //Minh
     //define('UPLOAD_IMAGE_PATH','/xampp/htdocs/Hotelbooking/images/');
 
