@@ -7,28 +7,51 @@
     if(isset($_POST['get_bookings']))
     {
         $frm_data = filteration($_POST);
+
+        $limit = 10;
+        $page = $frm_data['page'];
+        $start = ($page-1)* $limit;
+
         $query = "SELECT bo.*, bd.* from booking_order bo
         inner join booking_details bd on bo.booking_id = bd.booking_id
-        where (bo.order_id like ? or bd.phonenum like ? or bd.user_name like ?)
-        and (bo.booking_status = ? and bo.arrival = ?) 
-        order by bo.booking_id ASC";
+        where ((bo.booking_status = 'booked' and bo.arrival = 1)
+        or (bo.booking_status = 'cancelled' and bo.refund = 1))
+        and (bo.order_id like ? or bd.phonenum like ? or bd.user_name like ?)
+        order by bo.booking_id desc";
 
         $res = select($query,
-             ["%$frm_data[search]%", "%$frm_data[search]%", "%$frm_data[search]%", "booked", 0], 'sssss');
+             ["%$frm_data[search]%", "%$frm_data[search]%", "%$frm_data[search]%"], 'sss');
+        
+        $limit_query = $query ." LIMIT $start, $limit";
+        $limit_res = select($limit_query,
+            ["%$frm_data[search]%", "%$frm_data[search]%", "%$frm_data[search]%"], 'sss');
+        
         $i = 1;
         $table_data = "";
 
-        if(mysqli_num_rows($res)==0)
+        $total_rows = mysqli_num_rows($res);
+
+        if($total_rows==0)
         {
-            echo "<b>No data found!</br>";
+            $output = json_encode(["table_data"=>"<b>No data found!</b>", "pagination"=>'']);
+            echo $output;
             exit;
         }
 
-        while($data = mysqli_fetch_assoc($res))
+        while($data = mysqli_fetch_assoc($limit_res))
         {
             $date = date("d-m-Y", strtotime($data['datentime']));
             $checkin = date("d-m-Y", strtotime($data['check_in']));
             $checkout = date("d-m-Y", strtotime($data['check_out']));
+
+            if($data['booking_status']=='booked')
+            {
+                $status_bg = 'bg-success';
+            }
+            else if($data['booking_status']=='cancelled')
+            {
+                $status_bg = 'bg-danger';
+            }
 
             $table_data .=
             "
@@ -46,17 +69,15 @@
                         <b>Price: </b> $data[price] VNĐ
                     </td>
                     <td>
-                        <b> Check-in: </b>$checkin <br>
-                        <b> Check-out: </b>$checkout <br>
-                        <b>Paid: </b> $data[total_pay] VNĐ <br>
+                        <b>Amount: </b> $data[total_pay] VNĐ <br>
                         <b>Date: </b> $date 
                     </td>
                     <td>
-                        <button type='button' onclick='assign_room($data[booking_id])' class='btn text-white btn-sm fw-bold custom-bg shadow-none' data-bs-toggle='modal' data-bs-target='#assign-room'>
-                            <i class='bi bi-check2-square'></i> Assign room
-                        </button> <br>
+                        <span class ='badge $status_bg'>$data[booking_status]</span>
+                    </td>
+                    <td>
                         <button type='button' onclick='cancel_booking($data[booking_id])' class='mt-2 btn btn-outline-danger btn-sm fw-bold shadow-none'>
-                            <i class='bi bi-trash'></i> Cancel booking
+                            <i class='bi bi-trash'></i>
                         </button>
                     </td>
                 </tr>
