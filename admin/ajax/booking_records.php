@@ -37,6 +37,8 @@
             echo $output;
             exit;
         }
+        $i = 1;
+        $table_data ="";
 
         while($data = mysqli_fetch_assoc($limit_res))
         {
@@ -85,7 +87,8 @@
 
             $i++;
         }
-        echo $table_data;
+        $output = json_encode(["table_data"=>$table_data]);
+        echo $output;
     }
 
     if(isset($_POST['assign_room']))

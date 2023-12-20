@@ -6,7 +6,8 @@ function get_bookings(search ='', page = 1)
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
     
     xhr.onload= function(){
-        document.getElementById('table-data').innerHTML = this.responseText;
+        let data = JSON.parse(this.responseText);
+        document.getElementById('table-data').innerHTML = data.table_data;
 
     }
     xhr.send('get_bookings&search=' + search + '&page=' + page);
