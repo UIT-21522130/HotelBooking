@@ -45,7 +45,7 @@
             //run query to check room is available or not
             $tb_query = "SELECT COUNT(*) AS `total_bookings` FROM `booking_order`
                 WHERE booking_status =? AND room_id =? 
-                AND checkout > ? AND check_in < ?";
+                AND check_out > ? AND check_in < ?";
 
             $values = ['booked',$_SESSION['room']['id'],$frm_data['check_in'],$frm_data['check_out']];
             $tb_fetch = mysqli_fetch_assoc(select($tb_query,$values,'siss'));
