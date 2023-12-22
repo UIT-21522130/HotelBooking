@@ -144,6 +144,8 @@
                     displayedUsername = this.responseText; // Gán giá trị cho displayedUsername
                     alert('success','Changes saved!');
                     // Tiếp tục thực hiện các hành động khác với biến displayedUsername nếu cần
+                    var spanElement = document.getElementById("user-name");
+                    spanElement.innerHTML = info_form.elements['name'].value;
                 }
             }
 
