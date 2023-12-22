@@ -73,11 +73,11 @@
 
         $query = "UPDATE booking_order bo inner join booking_details bd
         ON bo.booking_id = bd.booking_id
-        set bo.arrival = ?,  bd.room_no = ?
+        set bo.arrival = ?, bo.rate_review =?,  bd.room_no = ?
         where bo.booking_id = ?";
 
-        $values = [1, $frm_data['room_no'], $frm_data['booking_id']];
-        $res = update($query, $values, 'isi');
+        $values = [1,0, $frm_data['room_no'], $frm_data['booking_id']];
+        $res = update($query, $values, 'iisi');
 
         echo ($res == 2) ? 1 : 0;
     }

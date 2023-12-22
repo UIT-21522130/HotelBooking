@@ -4,7 +4,7 @@
     date_default_timezone_set("Asia/Ho_Chi_Minh");
 
     session_start();
-    $_SESSION['room'];
+   
     if(!isset($_SESSION['login']) || $_SESSION['login'] != true)
     {
         redirect('index.php');
