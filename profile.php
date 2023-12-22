@@ -72,10 +72,32 @@
                         <div class="bg-white p-3 p-md-4 rounded shadow-sm">
                             <form id="profile-form">
                                 <h5 class="mb-3 fw-bold">Picture</h5>
-                                <img src="<?php echo USERS_IMG_PATH.$u_fetch['profile'] ?>" class="img-fluid">
+                                <img src="<?php echo USERS_IMG_PATH.$u_fetch['profile'] ?>" class="rounded-circle img-fluid">
                                 <div class="mb-3 fw-bold"></div>
+                                
                                 <label class="form-label">New Picture</label>
                                 <input name="profile" accept=".jpg, .jpeg, .png, .webp" type="file" class="mb-4 form-control shadow-none">                                  
+                                
+                                <button type="submit" class="btn text-white custom-bg shadow-none">Save Changes</button>
+                            </form>
+                        </div>
+                    </div> 
+
+                    <div class="col-md-8 mb-5  px-4">
+                        <div class="bg-white p-3 p-md-4 rounded shadow-sm">
+                            <form id="pass-form">
+                                <h5 class="mb-3 fw-bold">Change Password</h5>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label" >New Password</label>
+                                        <input name="new_pass" type="password"  class="form-control shadow-none" required>                                
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <label class="form-label" >Confirm Password</label>
+                                        <input name="confirm_pass" type="password" class="form-control shadow-none" required>                                
+                                    </div>
+                                </div>
+                                
                                 <button type="submit" class="btn text-white custom-bg shadow-none">Save Changes</button>
                             </form>
                         </div>
@@ -146,11 +168,14 @@
 
             if (this.responseText == 'inv_img') {
                 alert('error', "Only JPG, WEBP, PNG image are allowed!");
-            } else if (this.responseText == 'upd_failed') {
+            } 
+            else if (this.responseText == 'upd_failed') {
                 alert('error', "Image upload failed!");
-            } else if (this.responseText == 0) {
-                alert('error', "No changes Made!");
-            } else {
+            } 
+            else if (this.responseText == 0) {
+                alert('error', "Updation Failed!");
+            } 
+            else {
                 console.log('Redirecting to:', window.location.pathname);
                 window.location.href = window.location.pathname;
             }
@@ -160,6 +185,46 @@
             xhr.send(data);
         });
 
+        let pass_form = document.getElementById('pass-form');
+
+        pass_form.addEventListener('submit', function(e){
+            e.preventDefault();
+
+            let new_pass = pass_form.elements['new_pass'].value;
+            let confirm_pass = pass_form.elements['confirm_pass'].value;
+
+            if(new_pass != confirm_pass){
+                alert('error', 'Password do not match!');
+                return false;
+            }
+
+            let data = new FormData();
+            data.append('pass_form','');
+            data.append('new_pass', new_pass);
+            data.append('confirm_pass', confirm_pass);
+
+
+            let xhr= new XMLHttpRequest();
+            xhr.open("POST","ajax/profile.php",true);
+
+            xhr.onload = function() {
+            console.log('Response:', this.responseText);
+
+            if (this.responseText == 'mismatch') {
+                alert('error', "Password do not match!");
+            } 
+            else if (this.responseText == 0) {
+                alert('error', "Updation Failed!");
+            } 
+            else {
+                alert('success', 'Changes saved!');
+                pass_form.reset();
+            }
+        };
+
+
+            xhr.send(data);
+        });
 
 
     </script>
