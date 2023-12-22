@@ -1,8 +1,8 @@
 <?php
 //Minh
-//$hname = 'localhost:3307';
+$hname = 'localhost:3307';
 
- $hname = 'localhost';
+//$hname = 'localhost';
 $uname = 'root';
 $pass = '';
 $db = 'hotel_booking';

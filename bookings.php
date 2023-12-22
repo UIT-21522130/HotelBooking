@@ -54,11 +54,11 @@
                     if($data['booking_status'] == 'booked') {
                        $status_bg = "bg-success";
                        if($data['arrival'] == 1) {
-                            $btn = "<a href='generate_pdf.php&gen_pdf&id=$data[booking_id]' class='btn btn-dark btn-sm shadow-none'>Download PDF</a>
+                            $btn = "<a href='generate_pdf.php?gen_pdf&id=$data[booking_id]' class='btn btn-dark btn-sm shadow-none'>Download PDF</a>
                             <button type='button' class='btn btn-dark btn-sm shadow-none'>Rate & Review</button>";
                        } 
                        else {
-                        $btn = "<button type='button' class='btn btn-danger btn-sm shadow-none'>Cancel</button>";
+                        $btn = "<button onclick='cancel_booking($data[booking_id])' type='button' class='btn btn-danger btn-sm shadow-none'>Cancel</button>";
                        }
                     }
                     else if($data['booking_status'] == 'cancelled'){
@@ -68,12 +68,12 @@
                             $btn = "<span class='badge btn-primary'>Refund in process!</span>";
                         }
                         else {
-                            $btn = "<a href='generate_pdf.php&gen_pdf&id=$data[booking_id]' class='btn btn-dark btn-sm shadow-none'>Download PDF</a>";
+                            $btn = "<a href='generate_pdf.php?gen_pdf&id=$data[booking_id]' class='btn btn-dark btn-sm shadow-none'>Download PDF</a>";
                         }
                     }
                     else {
                         $status_bg = "bg-warning";
-                        $btn = "<a href='generate_pdf.php&gen_pdf&id=$data[booking_id]' class='btn btn-dark btn-sm shadow-none'>Download PDF</a>";
+                        $btn = "<a href='generate_pdf.php?gen_pdf&id=$data[booking_id]' class='btn btn-dark btn-sm shadow-none'>Download PDF</a>";
                     }
 
                     echo <<<bookings
@@ -102,6 +102,39 @@
         </div>
     </div>
 
+
+    <?php 
+        if(isset($_GET['cancel_status'])){
+            alert('success','Booking Cancelled!');
+        }
+    ?>
+
     <?php require('inc/footer.php');?>
+
+    <script>
+        function cancel_booking(id)
+        {
+            if(confirm('Are you sure you want to cancel?'))
+            {
+                let xhr= new XMLHttpRequest();
+                xhr.open("POST","ajax/cancel_booking.php",true);
+                xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+                
+                xhr.onload= function(){
+                    if(this.responseText==1){
+                        window.location.href="bookings.php?cancel_status=true";
+                    }
+                    else
+                    {
+                        alert('error','Cancellation Failed')
+                    }
+                }
+                
+                xhr.send('cancel_booking&id='+id);
+            }
+        }
+    </script>
+
+
 </body> 
 </html>
