@@ -20,7 +20,13 @@
 
         $ups_result = update($upd_query,$upd_values,'iii');
 
-        echo $result;
+        $ins_query = "INSERT INTO `rating_review`( `booking_id`, `room_id`, `user_id`, `rating`, `review`) 
+            VALUES (?,?,?,?,?)";
+        $ins_values = [$frm_data['booking_id'], $frm_data['room_id'], $_SESSION['uId'], $frm_data['rating'], $frm_data['review']];
+        $ins_result = insert($ins_query,$ins_values,'iiiis');
+
+
+        echo $ins_result;
     }
     
 

@@ -110,7 +110,7 @@
             <div class="modal-content">
                 <form id="review-form">
                     <div class="modal-header">
-                        <h5 class="modal-title d-flex align-items-center    ">
+                        <h5 class="modal-title d-flex align-items-center">
                             <i class="bi bi-chat-left-heart-fill fs-3 me-2"></i> Rate & Review
                         </h5>
                     <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -187,6 +187,7 @@
             let data = new FormData();
             data.append('review_form','');
             data.append('rating', review_form.elements['rating'].value);
+            data.append('review', review_form.elements['review'].value);
             data.append('booking_id', review_form.elements['booking_id'].value);
             data.append('room_id', review_form.elements['room_id'].value);
 
@@ -195,14 +196,14 @@
             xhr.open("POST","ajax/review_room.php",true);
 
             xhr.onload= function(){
-                if (this.responseText == 0) {
+                if (this.responseText == 1) {
+                    window.location.href= 'bookings.php?review_status=true';
+                }
+                else {
                     var myModal = document.getElementById('reviewModal');
                     var modal = bootstrap.Modal.getInstance(myModal);
                     modal.hide();
                     alert('error',"Rating and Review Failed!");
-                }
-                else {
-                    window.location.href= 'bookings.php?review_status=true';
             }
 
         }
