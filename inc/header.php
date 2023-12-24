@@ -104,12 +104,8 @@
                 <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                <span class="badge bg-light text-dark mb-3 text-wrap lh-base">
-                    Note: your details must match with your ID (ID card, passport, driving lisense, etc.) that will be required during check-in.
-                </span>
                 <div class="container-fluid">
-                    <div class="row">
-                      
+                    <div class="row">                      
                         <div class="form-group mb-3">
                             <label class="sr-only" >Name</label>
                             <input type="text" class="form-control shadow-none" name="name" placeholder="Name" required>                                
