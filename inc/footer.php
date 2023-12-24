@@ -169,8 +169,9 @@ function setActive(){
                 else
                 {
                 alert('success','Login success!');
-                window.location = window.location.pathname;
-                }
+                setTimeout(function() {
+                    window.location = window.location.pathname;
+                    }, 2000);                }
             }
         }
             xhr.send(data);
