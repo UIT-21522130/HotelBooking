@@ -19,7 +19,7 @@
          }
         $result = mysqli_fetch_assoc(mysqli_query($con,"SELECT 
     
-        COUNT(CASE WHEN booking_status != 'pending'  then 1 end) as `total_bookings`,
+        COUNT(booking_id) as `total_bookings`,
         
         COUNT(CASE WHEN booking_status = 'booked' AND arrival =1 then 1 end) as `active_bookings`,
         COUNT(CASE WHEN booking_status = 'cancelled' AND refund =1 then 1 end) as `cancelled_bookings`

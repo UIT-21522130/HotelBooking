@@ -20,7 +20,7 @@
         $is_shutdown = mysqli_fetch_assoc(mysqli_query($con,"SELECT `shutdown` FROM `settings`"));
         $current_bookings = mysqli_fetch_assoc(mysqli_query($con,"SELECT 
             COUNT(CASE WHEN booking_status = 'booked' AND arrival =0 then 1 end) as `new_bookings`,
-            COUNT(CASE WHEN booking_status = 'cancelled' AND refund =0 then 1 end) as `refund_bookings`
+            COUNT(CASE WHEN booking_status = 'cancelled' AND refund =1 then 1 end) as `refund_bookings`
         from `booking_order`
         "));
         $current_users = mysqli_fetch_assoc(mysqli_query($con,"SELECT
