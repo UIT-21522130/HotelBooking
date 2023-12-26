@@ -83,14 +83,14 @@
                         <div class='col-md-4 px-4 mb-4'>
                             <div class='bg-white p-3 rounded shadow-sm'>
                                 <h5 class="fw-bold">$data[room_name]</h5>
-                                <p>$data[price] VND per night</p>
+                                <p>$data[price] VND one day</p>
                                 <p>
                                     <b>Check in: </b> $checkin <br>
                                     <b>Check out: </b> $checkout
                                 </p>
                                 <p>
-                                    <b>Amount: </b>$data[price] VND<br>
-                                    <b>Check out: </b> $data[order_id] <br>
+                                    <b>Toal paid: </b>$data[total_pay] VND<br>
+                                    <b>Order ID: </b> $data[order_id] <br>
                                     <b>Date: </b> $date
                                 </p>
                                 <p>
@@ -117,7 +117,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label class = "form-label bi bi-star">Rating</label>
+                            <label class = "form-label bi bi-star"> Rating</label>
                             <select class="form-select shadow-none" name="rating">
                                 <option value="5">Excellent</option>
                                 <option value="4">Good</option>
@@ -127,7 +127,7 @@
                                 </select>
                         </div>
                         <div class="mb-4">
-                            <label class = "form-label bi bi-envelope-heart">Review</label>
+                            <label class = "form-label bi bi-envelope-heart"> Review</label>
                             <textarea type="password" name="review" rows="3" required class="form-control shadow-none"> </textarea>
                         </div>
                         <input type="hidden" name="booking_id">

@@ -57,7 +57,7 @@
                 </tr>
                 <tr>
                     <td>Room name: $data[room_name]</td>
-                    <td>Cost: $data[price] VNĐ per night</td>
+                    <td>Cost: $data[price] VNĐ one day</td>
                 </tr>
                 <tr>
                     <td>Check-in: $checkin</td>

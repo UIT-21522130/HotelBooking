@@ -84,7 +84,7 @@
                     <div class="card p-3 shadow-sm reounded">
                         <img src="$room_thumb" class="img-fluid rounded mb-3">
                         <h5>$room_data[name]</h5>
-                        <h6>$room_data[price] VND per night</h6>
+                        <h6>$room_data[price] VND one day</h6>
 
                     </div>
                 data;
